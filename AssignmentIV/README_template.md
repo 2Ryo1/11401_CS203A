@@ -4,8 +4,8 @@ This assignment focuses on the design and observation of hash functions using C/
 Students are expected to implement and analyze the behavior of hash functions, 
 evaluate their efficiency, and understand their applications in computer science.
 
-Developer: [Your Name]  
-Email: [Your email]  
+Developer: [Ryo Ito, s1133352]  
+Email: [ryo0516tw@gmail.com]  
 
 ## My Hash Function
 ### Integer Keys 
@@ -176,3 +176,4 @@ Email: [Your email]
 1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
 2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
 3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+
