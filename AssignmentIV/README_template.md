@@ -5,8 +5,8 @@ Students are expected to implement and analyze the behavior of hash functions,
 evaluate their efficiency, and understand their applications in computer science.
 
 Developer: [Ryo Ito, s1133352]  
-Email: [ryo0516tw@gmail.com]  
-testword
+Email: [ryo0516tw@gmail.com] 
+
 ## My Hash Function
 ### Integer Keys 
 - Formula / pseudocode:
