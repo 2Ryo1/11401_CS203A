@@ -6,7 +6,7 @@ evaluate their efficiency, and understand their applications in computer science
 
 Developer: [Ryo Ito, s1133352]  
 Email: [ryo0516tw@gmail.com]  
-
+testword
 ## My Hash Function
 ### Integer Keys 
 - Formula / pseudocode:
