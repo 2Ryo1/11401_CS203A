@@ -162,8 +162,8 @@ To ensure your code is readable, maintainable, and adheres to best practices, fo
 - Document your findings in the `README.md`:
     - Include tables or charts showing index distributions.
     - Analyze collision rates and uniformity of the hash function.
--first
-    -First, run it with the initial (unmodified) code. (At this point, since c did not work correctly in the existing Makefile.bat, change c23 on line 9 to c2x.)
+- First
+    - Run it with the initial (unmodified) code. (At this point, since c did not work correctly in the existing Makefile.bat, change c23 on line 9 to c2x.)
 
 ### 4. Error Handling
 - Ensure your code handles edge cases gracefully (e.g., empty strings, zero table size).
@@ -177,4 +177,5 @@ By adhering to these practices, you will develop clean, professional, and well-d
 
 ## References
 - [Learning Git](https://github.com/doggy8088/Learn-Git-in-30-days/tree/master)
+
 
