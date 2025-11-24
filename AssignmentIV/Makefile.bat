@@ -5,8 +5,8 @@ REM Compilers
 set CC=gcc.exe
 set CXX=g++.exe
 
-REM Flags
-set CFLAGS=-std=c23 -Wall -Wextra -Wpedantic -g
+REM Flags 11/25.am6:32 chang:line 9,c23 to c2x
+set CFLAGS=-std=c2x -Wall -Wextra -Wpedantic -g
 set CXXFLAGS=-std=c++23 -Wall -Wextra -Wpedantic -g
 
 REM Source files
