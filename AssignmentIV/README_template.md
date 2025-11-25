@@ -7,6 +7,39 @@ evaluate their efficiency, and understand their applications in computer science
 Developer: [Ryo Ito, s1133352]  
 Email: [ryo0516tw@gmail.com] 
 
+## Original Function
+### Integer Keys
+- Formula / pseudocode:
+  ```text
+  key%m
+  ```
+### Non-integer Keys
+- Formula / pseudocode:
+  ```text
+  (int)hash%m
+  ```
+  --However, since the hash is assigned a value of 0 without converting from str to hash, the result is uniformly 0.
+  --Therefore, non-integers are considered non-functional.
+## Experimental Setup
+- Table sizes tested (m): 10, 11, 37
+- Test dataset:
+  - Integers: 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60
+  - Strings: "cat", "dog", "bat", "cow", "ant", "owl", "bee", "hen", "pig", "fox"
+- Compiler: GCC and G++
+- Standard: C2X and C++23(Because c did not work correctly in the existing Makefile.bat, change c23 on line 9 to c2x.)
+
+## Results
+| Table Size (m) | Index Sequence         | Observation              | 
+|----------------|------------------------|--------------------------|
+| 10             | 1, 2, 3, 4, ...        | Pattern repeats every 10 |
+| 11             | 10, 0, 1, 2, ...       | More uniform             |
+| 37             | 20, 21, 22, 23, ...    | Near-uniform             |
+
+| Table Size (m) | Collision Rate  | Distribution Uniformity                               | 
+|----------------|-----------------|-------------------------------------------------------|
+| 10             | 50%             | Uniformly, but all collisions occur                   |
+| 11             | 45%             | Nearly uniform but collisions occur                   |
+| 37             | 15%             | Uniformity is low but collisions are infrequent       |
 ## My Hash Function
 ### Integer Keys 
 - Formula / pseudocode:
@@ -176,4 +209,5 @@ Email: [ryo0516tw@gmail.com]
 1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
 2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
 3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+
 
