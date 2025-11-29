@@ -37,6 +37,7 @@ int myHashInt(int key, int m) {
     string sd =to_string(d);
     int r = key%m;
     string sr =to_string(r);
+    
     string stringhash = sd + sr;
     int hash = stoi(stringhash);
     return hash%m; // 2025/11/24 AM6:50 created
@@ -53,6 +54,7 @@ int myHashString(const std::string& str, int m) {
     if(wordsize==1)wordsize++; //To avoid dividing by zero
     d+=int(str[wordsize-1])/(wordsize-1);
     r+=int(str[0])%m;
+
     string sd =to_string(d);
     string sr =to_string(r);
     string stringhash = sd + sr;
