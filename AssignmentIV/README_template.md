@@ -155,75 +155,241 @@ Email: [ryo0516tw@gmail.com]
 ### Result Snapshot
 - Example output for integers:
   ```
-  === Hash Function Observation (C Version) ===
+  \11401_CS203A\AssignmentIV\C>hash_function.exe
+=== Hash Function Observation (C Version) ===
 
-  === Table Size m = 10 ===
-  Key     Index
-  -----------------
-  21      1
-  22      2
-  ...
+=== Table Size m = 10 ===
+Key     Index
+-----------------
+21      1
+22      2
+23      3
+24      4
+25      5
+26      6
+27      7
+28      8
+29      9
+30      0
+51      1
+52      2
+53      3
+54      4
+55      5
+56      6
+57      7
+58      8
+59      9
+60      0
 
-  === Table Size m = 11 ===
-  Key     Index
-  -----------------
-  21      10
-  22      0
-  ...
+=== Table Size m = 11 ===
+Key     Index
+-----------------
+21      0
+22      9
+23      10
+24      0
+25      1
+26      2
+27      3
+28      4
+29      5
+30      6
+51      3
+52      4
+53      5
+54      3
+55      6
+56      7
+57      8
+58      9
+59      10
+60      0
 
-  === Table Size m = 37 ===
-  Key     Index
-  -----------------
-  21      21
-  22      22
-  ...
+=== Table Size m = 37 ===
+Key     Index
+-----------------
+21      21
+22      22
+23      23
+24      24
+25      25
+26      26
+27      27
+28      28
+29      29
+30      30
+51      3
+52      4
+53      5
+54      6
+55      7
+56      8
+57      9
+58      10
+59      11
+60      12
 
-  === Hash Function Observation (C++ Version) ===
+=== String Hash (m = 10) ===
+Key     Index
+-----------------
+cat     1
+dog     4
+bat     9
+cow     8
+ant     0
+owl     9
+bee     8
+hen     9
+pig     2
+fox     5
 
-  === Table Size m = 10 ===
-  Key     Index
-  -----------------
-  21      1
-  22      2
-  ...
+=== String Hash (m = 11) ===
+Key     Index
+-----------------
+cat     1
+dog     5
+bat     9
+cow     10
+ant     0
+owl     4
+bee     1
+hen     7
+pig     5
+fox     7
 
-  === Table Size m = 11 ===
-  Key     Index
-  -----------------
-  21      10
-  22      0
-  ...
-
-  === Table Size m = 37 ===
-  Key     Index
-  -----------------
-  21      21
-  22      22
+=== String Hash (m = 37) ===
+Key     Index
+-----------------
+cat     29
+dog     35
+bat     27
+cow     24
+ant     1
+owl     26
+bee     10
+hen     36
+pig     16
+fox     20
   ...
   ```
-
-- Example output for strings:
   ```
-  === String Hash (m = 10) ===
-  Key     Index
-  -----------------
-  cat     0
-  dog     0
-  ...
+=== Hash Function Observation (C++ Version) ===
 
-  === String Hash (m = 11) ===
-  Key     Index
-  -----------------
-  cat     0
-  dog     0
-  ...
+=== Table Size m = 10 ===
+Key     Index
+-----------------
+21      1
+22      2
+23      3
+24      4
+25      5
+26      6
+27      7
+28      8
+29      9
+30      0
+51      1
+52      2
+53      3
+54      4
+55      5
+56      6
+57      7
+58      8
+59      9
+60      0
 
-  === String Hash (m = 37) ===
-  Key     Index
-  -----------------
-  cat     0
-  dog     0
-  ...
+=== Table Size m = 11 ===
+Key     Index
+-----------------
+21      0
+22      9
+23      10
+24      0
+25      1
+26      2
+27      3
+28      4
+29      5
+30      6
+51      3
+52      4
+53      5
+54      3
+55      6
+56      7
+57      8
+58      9
+59      10
+60      0
+
+=== Table Size m = 37 ===
+Key     Index
+-----------------
+21      21
+22      22
+23      23
+24      24
+25      25
+26      26
+27      27
+28      28
+29      29
+30      30
+51      3
+52      4
+53      5
+54      6
+55      7
+56      8
+57      9
+58      10
+59      11
+60      12
+
+=== String Hash (m = 10) ===
+Key     Index
+-----------------
+cat     1
+dog     4
+bat     9
+cow     8
+ant     0
+owl     9
+bee     8
+hen     9
+pig     2
+fox     5
+
+=== String Hash (m = 11) ===
+Key     Index
+-----------------
+cat     1
+dog     5
+bat     9
+cow     10
+ant     0
+owl     4
+bee     1
+hen     7
+pig     5
+fox     7
+
+=== String Hash (m = 37) ===
+Key     Index
+-----------------
+cat     29
+dog     35
+bat     27
+cow     24
+ant     1
+owl     26
+bee     10
+hen     36
+pig     16
+fox     20
+
   ```
 
 - Observations: Outputs align with the analysis, showing better distribution with prime table sizes.
@@ -250,6 +416,7 @@ Email: [ryo0516tw@gmail.com]
 1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
 2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
 3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+
 
 
 
