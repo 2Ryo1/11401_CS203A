@@ -9,7 +9,7 @@
    Development History:
     - 2025/11/17: Initial implementation
 
-   Developer: Yu-Feng Huang <yfhuang@saturn.yzu.edu.tw>
+   Developer: Ryo Ito <s1133352@mail.yzu.edu.tw>
  */
 #ifndef HASH_FN_HPP
 #define HASH_FN_HPP
@@ -20,3 +20,4 @@ int myHashString(const std::string& str, int m);
 int myHashInt(int key, int m);
 
 #endif
+
