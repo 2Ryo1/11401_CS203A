@@ -391,23 +391,8 @@ Email: [ryo0516tw@gmail.com]
   fox     20
 
   ```
-
-- Observations:Outputs align with the analysis, Comparing Original and MyFunction, MyFunction exhibits a lower collision rate and improved distribution. These effects become more pronounced as the table size increases.
+- Observations: Outputs align with the analysis, Comparing Original and MyFunction, MyFunction exhibits a lower collision rate and improved distribution. These effects become more pronounced as the table size increases.
 For string keys, the technique of appending leading or trailing characters successfully differentiates similar words by assigning them to distinct indices.
-- Example output for integers:
-  ```
-  Hash table (m=10): [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-  Hash table (m=11): [10, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  Hash table (m=37): [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, ...]
-  ```
-- Example output for strings:
-  ```
-  Hash table (m=10): ["cat", "dog", "bat", "cow", "ant", ...]
-  Hash table (m=11): ["fox", "cat", "dog", "bat", "cow", ...]
-  Hash table (m=37): ["bee", "hen", "pig", "fox", "cat", ...]
-  ```
-- Observations: Outputs align with the analysis, showing better distribution with prime table sizes.
-
 ## Analysis
 - Prime vs non-prime `m`: Prime table sizes generally result in better distribution and fewer collisions.
 - Patterns or collisions: Non-prime table sizes tend to produce repetitive patterns, leading to more collisions.
@@ -417,6 +402,7 @@ For string keys, the technique of appending leading or trailing characters succe
 1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
 2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
 3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+
 
 
 
