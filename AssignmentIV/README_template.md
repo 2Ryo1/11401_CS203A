@@ -82,14 +82,34 @@ Email: [ryo0516tw@gmail.com]
   - Integers: 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60
   - Strings: "cat", "dog", "bat", "cow", "ant", "owl", "bee", "hen", "pig", "fox"
 - Compiler: GCC and G++
-- Standard: C23 and C++23
+- Standard: C2X and C++23(Because c did not work correctly in the existing Makefile.bat, change c23 on line 9 to c2x.)
 
 ## Results
-| Table Size (m) | Index Sequence         | Observation              |
-|----------------|------------------------|--------------------------|
-| 10             | 1, 2, 3, 4, ...        | Pattern repeats every 10 |
-| 11             | 10, 0, 1, 2, ...       | More uniform             |
-| 37             | 20, 21, 22, 23, ...    | Near-uniform             |
+# myHashInt
+| Table Size (m) | Index Sequence         | Observation                                                               |
+|----------------|------------------------|---------------------------------------------------------------------------|
+| 10             | 1, 2, 3, 4, ...        | Periodic, but differentiation is possible through combination of products |
+| 11             | 0, 9, 10, 0, ...       | Combining the remainder with the remainder for more even distribution     |
+| 37             | 21, 22, 23, 24, ...    | Spread out over a wide area with minimal collisions                       |
+
+| Table Size (m) | Collision Rate  | Distribution Uniformity                                                    | 
+|----------------|-----------------|----------------------------------------------------------------------------|
+| 10             | 40%             | Slightly improved compared to the original, but periodicity remains        |
+| 11             | 30%             | Equality has increased, and the collision rate has decreased               |
+| 37             | 10%             | Distributed over a wide area, the collision has been largely resolved      |
+
+# myHashString
+| Table Size(m)| Index Sequence            | Observation                                                            |
+|--------------|---------------------------|------------------------------------------------------------------------|
+| 10           | cat=1, dog=4, bat=3,...   | Each string has a different value, with little periodicity             |
+| 11           | cat=1, dog=5, bat=9,...   | Adding leading and trailing characters effectively differentiates them |
+| 37           | cat=29, dog=35, bat=27,...| Distributed over a wide area, with collisions largely resolved         |
+
+| Table Size (m) | Collision Rate  | Distribution Uniformity                                                   | 
+|----------------|-----------------|---------------------------------------------------------------------------|
+| 10             | 30%             | Like myHashInt, it has a low collision rate with a small table size       |
+| 11             | 20%             | Equality has increased, and the collision rate has decreased              |
+| 37             | 50%             | Distributed over a wide area, the collision has been largely resolved     |
 
 ## Compilation, Build, Execution, and Output
 
@@ -230,6 +250,7 @@ Email: [ryo0516tw@gmail.com]
 1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
 2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
 3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+
 
 
 
