@@ -13,7 +13,6 @@
     * @param m The table size.
     * @return The computed hash index.
 
-
     myHashString:
     * @brief Computes the hash index for a string key.
         Converts characters to integers and combines quotient and remainder sums
@@ -21,7 +20,6 @@
         character's quotient and the first character's remainder.
     * @param m The table size.
     * @return The computed hash index.
-
 
    Development History:
     - 2025/11/24: replace with my design in hash_fn.hpp
