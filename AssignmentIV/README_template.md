@@ -392,7 +392,8 @@ Email: [ryo0516tw@gmail.com]
 
   ```
 
-- Observations: Outputs align with the analysis, showing better distribution with prime table sizes.
+- Observations: Comparing Original and MyFunction, MyFunction exhibits a lower collision rate and improved distribution. These effects become more pronounced as the table size increases.
+For string keys, the technique of appending leading or trailing characters successfully differentiates similar words by assigning them to distinct indices.
 - Example output for integers:
   ```
   Hash table (m=10): [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
@@ -416,6 +417,7 @@ Email: [ryo0516tw@gmail.com]
 1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
 2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
 3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+
 
 
 
