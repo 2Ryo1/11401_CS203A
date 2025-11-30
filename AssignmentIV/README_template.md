@@ -19,8 +19,8 @@ Email: [ryo0516tw@gmail.com]
   ```text
   (int)hash%m
   ```
-  -- However, since the hash is assigned a value of 0 without converting from str to hash, the result is uniformly 0.
-  -- Therefore, non-integers are considered non-functional.
+- However, since the hash is assigned a value of 0 without converting from str to hash, the result is uniformly 0.
+- Therefore, non-integers are considered non-functional.
 ## Experimental Setup
 - Table sizes tested (m): 10, 11, 37
 - Test dataset:
@@ -210,6 +210,7 @@ Email: [ryo0516tw@gmail.com]
 1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
 2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
 3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+
 
 
 
