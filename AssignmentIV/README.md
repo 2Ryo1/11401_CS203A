@@ -1,179 +1,420 @@
-# Assignment IV: Hash Function Design & Observation
+# Homework Assignment IV: Hash Function Design & Observation (C/C++ Version)
 
-## Important Dates
-- **Due Date**: 2025.11.23 23:59:59  
-- **Submission**: Submit your code in C and C++ along with `README.md` in your course repository (`11401_CS203A/Assignment/AssignmentIV/`).
+This assignment focuses on the design and observation of hash functions using C/C++. 
+Students are expected to implement and analyze the behavior of hash functions, 
+evaluate their efficiency, and understand their applications in computer science.
 
-## Learning Objectives
-- Understand how the **choice of hash function** and **table size** (m) affects index distribution.
-- Design and implement hash functions for both **integer keys** and **string keys**.
-- Gain practical experience in creating and testing **hash functions** in C and C++.
-- Analyze **index patterns**, **collision rates**, and **distribution uniformity** for various table sizes (m).
-- Learn how to use [Visual Studio Code to connect to your GitHub repository](./VSCode.md) for seamless version control and collaboration.
+Developer: [Ryo Ito, s1133352]  
+Email: [ryo0516tw@gmail.com] 
 
-## Repository Structure
-```
-AssignmentIV
-├── C                       # C implementation directory
-│   ├── hash_fn.c           # Hash function implementation in C
-│   ├── hash_fn.h           # Header file for C hash functions
-│   └── main.c              # Main program calling hash functions
-├── CXX                     # C++ implementation directory
-│   ├── hash_fn.cpp         # Hash function implementation in C++
-│   ├── hash_fn.hpp         # Header file for C++ hash functions
-│   └── main.cpp            # Main program calling hash functions
-├── Makefile                # Build configuration file for Linux platform
-├── Makefile.bat            # Build configuration file for Windows platform
-├── README.md               # Assignment documentation
-├── README_template.md      # Template for README documentation
-└── VSCode.md               # VS Code setup instructions
-```
+## Original Function
+- This task only involves executing the hash you created yourself, so C++ that produces the same output as the original is omitted.
+### Integer Keys
+- Formula / pseudocode:
+  ```text
+  function myHashInt(key, m):
+      return key%m
+  ```
+### Non-integer Keys
+- Formula / pseudocode:
+  ```text
+  function myHashString(str, m):
+      return (int)hash % m
+  ```
+- However, since the hash is assigned a value of 0 without converting from str to hash, the result is uniformly 0.
+- Therefore, non-integers are considered non-functional.
+## Experimental Setup
+- Table sizes tested (m): 10, 11, 37
+- Test dataset:
+  - Integers: 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60
+  - Strings: "cat", "dog", "bat", "cow", "ant", "owl", "bee", "hen", "pig", "fox"
+- Compiler: GCC and G++
+- Standard: C2X and C++23(Because c did not work correctly in the existing Makefile.bat, change c23 on line 9 to c2x.)
 
-## Getting Started
+## Results
+| Table Size (m) | Index Sequence         | Observation              | 
+|----------------|------------------------|--------------------------|
+| 10             | 1, 2, 3, 4, ...        | Pattern repeats every 10 |
+| 11             | 10, 0, 1, 2, ...       | More uniform             |
+| 37             | 20, 21, 22, 23, ...    | Near-uniform             |
 
-1. **Clone the Repository**  
-    Clone the repository to your local machine (new folder not your repository folder, e.g. /tmp/):
-    ```bash
-    git clone <repository-url>
-    ```
+| Table Size (m) | Collision Rate  | Distribution Uniformity                               | 
+|----------------|-----------------|-------------------------------------------------------|
+| 10             | 50%             | Uniformly, but all collisions occur                   |
+| 11             | 45%             | Nearly uniform but collisions occur                   |
+| 37             | 15%             | Uniformity is low but collisions are infrequent       |
+## My Hash Function
+### Integer Keys 
+- Formula / pseudocode:
+  ```text
+  function myHashInt(key, m):
+      d = key/m //quotient
+      r = key%m //remainder
+      buffer = conect(d, r) //conect d and r
+      hash = toint(buffer)
+      return hash % m
+  ```
+- Rationale:
+- In its original state, the collision rate is high and distribution skew occurs. Therefore, to increase key uniqueness, we combine the quotient and remainder. By enhancing the dependency of each key on the algorithm results, we can expect improved collision rates and reduced distribution skew compared to the original state.
 
-2. **Create the Folder in your Respoitory**  
-    Navigate to your repository and create the assignment folder:
-    ```bash
-    cd Assignment
-    mkdir AssignmentIV
-    ```
+### Non-integer Keys
+- Formula / pseudocode:
+  ```text
+  function myHashString(str, m):
+      d = 0, r = 0,wordsize = (len(str))
+      for each character c in str:
+          d += (int(c)/m) //sum of quotient 
+          r += (int(c)%m) //sum of remainder
+      if(wordsize = 1):// for avoid zero division
+         wordsize++
+      d +=lastchar / (wordsize-1)
+      r +=firstchar % m
+      buffer = conect(d, r) //conect d and r
+      hash = toint(buffer)
+      return hash % m
+  ```
+- Rationale:
+- Similar to myHashInt, this code enhances key uniqueness by using the ASCII values of each character in the string. It combines the sum of each character's quotient with the sum of their remainders. However, this approach carries the risk of matching total values even for different strings. To mitigate this collision risk, we can add the index element to the algorithm by using the remainder of the last character divided by the array length and the remainder of the first character divided by m.
 
-3. **Copy Template Files**  
-    Copy the provided templates and example code:
-    ```bash
-    cp /tmp/11401_CS203A/Assignment/AssignmentIV/README_template.md README.md
-    cp /tmp/11401_CS203A/Assignment/AssignmentIV/Makefile .
-    cp /tmp/11401_CS203A/Assignment/AssignmentIV/Makefile.bat .
-    cp /tmp/11401_CS203A/Assignment/AssignmentIV/VSCode.md .
-    rsync -av /tmp/11401_CS203A/Assignment/AssignmentIV/C .
-    rsync -av /tmp/11401_CS203A/Assignment/AssignmentIV/CXX .
-    ```
+## Experimental Setup
+- Table sizes tested (m): 10, 11, 37
+- Test dataset:
+  - Integers: 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60
+  - Strings: "cat", "dog", "bat", "cow", "ant", "owl", "bee", "hen", "pig", "fox"
+- Compiler: GCC and G++
+- Standard: C2X and C++23(Because c did not work correctly in the existing Makefile.bat, change c23 on line 9 to c2x.)
 
-4. **Verify Folder Structure**  
-    Ensure the folder structure is correct:
-    ```bash
-    cd Assignment
-    tree -L 2 AssignmentIV
-    ```
-    Expected output:
-    ```
-    AssignmentIV
-    ├── C
-    │   ├── hash_fn.c
-    │   ├── hash_fn.h
-    │   └── main.c
-    ├── CXX
-    │   ├── hash_fn.cpp
-    │   ├── hash_fn.hpp
-    │   └── main.cpp
-    ├── Makefile                # Build configuration file for Linux platform
-    ├── Makefile.bat            # Build configuration file for Windows platform
-    ├── README.md               # README documentation
-    └── VSCode.md               # VS Code setup instructions
-    ```
+## Results
+# myHashInt
+| Table Size (m) | Index Sequence         | Observation                                                               |
+|----------------|------------------------|---------------------------------------------------------------------------|
+| 10             | 1, 2, 3, 4, ...        | Periodic, but differentiation is possible through combination of products |
+| 11             | 0, 9, 10, 0, ...       | Combining the remainder with the remainder for more even distribution     |
+| 37             | 21, 22, 23, 24, ...    | Spread out over a wide area with minimal collisions                       |
 
-5. **Understand the Code**  
-    - **C**:
-      - `main.c`: Calls your hash function.
-      - `hash_fn.c`: Implement your hash functions here.
-    - **C++**:
-      - `main.cpp`: Calls your hash function.
-      - `hash_fn.cpp`: Implement your hash functions here.
+| Table Size (m) | Collision Rate  | Distribution Uniformity                                                    | 
+|----------------|-----------------|----------------------------------------------------------------------------|
+| 10             | 40%             | Slightly improved compared to the original, but periodicity remains        |
+| 11             | 30%             | Equality has increased, and the collision rate has decreased               |
+| 37             | 10%             | Distributed over a wide area, the collision has been largely resolved      |
 
-6. **Develop, Test, and Document**  
-    - Implement and test your hash functions.
-    - Document your development process and observations in `README.md`.
+# myHashString
+| Table Size(m)| Index Sequence            | Observation                                                            |
+|--------------|---------------------------|------------------------------------------------------------------------|
+| 10           | cat=1, dog=4, bat=3,...   | Each string has a different value, with little periodicity             |
+| 11           | cat=1, dog=5, bat=9,...   | Adding leading and trailing characters effectively differentiates them |
+| 37           | cat=29, dog=35, bat=27,...| Distributed over a wide area, with collisions largely resolved         |
 
-## Folder Structure in Your Course Repository
-```
-AssignmentIV/
-├── C/                      # C implementation directory
-│   ├── hash_fn.c           # Hash function implementation in C
-│   ├── hash_fn.h           # Header file for C hash functions
-│   └── main.c              # Main program calling hash functions
-├── CXX/                    # C++ implementation directory
-│   ├── hash_fn.cpp         # Hash function implementation in C++
-│   ├── hash_fn.hpp         # Header file for C++ hash functions
-│   └── main.cpp            # Main program calling hash functions
-├── Makefile                # Build configuration file for Linux platform
-├── Makefile.bat            # Build configuration file for Windows platform
-├── README.md               # README documentation
-└── VSCode.md               # VS Code setup instructions
-```
+| Table Size (m) | Collision Rate  | Distribution Uniformity                                                   | 
+|----------------|-----------------|---------------------------------------------------------------------------|
+| 10             | 30%             | Like myHashInt, it has a low collision rate with a small table size       |
+| 11             | 20%             | Equality has increased, and the collision rate has decreased              |
+| 37             | 50%             | Distributed over a wide area, the collision has been largely resolved     |
 
-## Assignment Instructions
-- **Objective**: Design and implement a hash function in C/C++ and analyze its index distribution.
-- **Steps**:
-  1. Implement the hash function in `hash_fn.c` and `hash_fn.cpp`.
-  2. Use the hash function in `main.c` and `main.cpp`.
-- **Submission**: Push your code and testing results to the repository.
+## Compilation, Build, Execution, and Output
 
-## Source Code Commit
+### Compilation
+- The project uses a comprehensive Makefile that builds both C and C++ versions with proper flags:
+  ```bash
+  # Build both C and C++ versions
+  make all
+  
+  # Build only C version
+  make c
+  
+  # Build only C++ version
+  make cxx
+  ```
 
-- Make at least three commits for this assignment:
-    1. Initial commit: Add `README.md`, `Makefile`, `Makefile.bat`, `VSCode.md` and the example C and C++ template files (`C/hash_fn.c`, `C/hash_fn.h`, `C/main.c`, `CXX/hash_fn.cpp`, `C/hash_fn.hpp`, `CXX/main.cpp`).
-    2. Development commits: Include one or more intermediate commits that record your implementation progress, tests, bug fixes, and small iterative changes. Use descriptive messages (e.g., "implement integer hash", "add string-hash tests", "fix collision handling").
-    3. Final commit: Include the finished code, updated `README.md` with observations, test results, and final evaluation.
+### Manual Compilation (if needed)
+- Command for C:
+  ```bash
+  gcc -std=c23 -Wall -Wextra -Wpedantic -g -o C/hash_function C/main.c C/hash_fn.c
+  ```
+- Command for C++:
+  ```bash
+  g++ -std=c++23 -Wall -Wextra -Wpedantic -g -o CXX/hash_function_cpp CXX/main.cpp CXX/hash_fn.cpp
+  ```
 
-- Commit guidelines:
-    - Write clear, concise commit messages that summarize the change.
-    - Ensure the `README.md` documents the development history (brief commit log or references to commit IDs) and highlights the final evaluation.
-    - Update `VSCode.md` with your setup experience and any additional configuration steps you discovered during development.
-    - Push all commits to the course repository under `AssignmentIV` before the deadline.
+### Clean Build Files
+- Remove all compiled files:
+  ```bash
+  make clean
+  ```
 
-## Coding and Documentation Style
+### Execution
+- Run the compiled binary:
+  ```bash
+  ./hash_function
+  ```
+  or
+  ```bash
+  ./hash_function_cpp
+  ```
 
-To ensure your code is readable, maintainable, and adheres to best practices, follow these guidelines:
+### Result Snapshot
+- Example output for integers:
+  ```text
+   \11401_CS203A\AssignmentIV\C>hash_function.exe
+   === Hash Function Observation (C Version) ===
 
-### 1. Code Style
-- **Indentation**: Use consistent indentation (e.g., 4 spaces per level).
-- **Naming Conventions**:
-    - Use `snake_case` for variable and function names in C. Refer to [ISO C Style Guidelines](https://en.cppreference.com/w/c/language/identifier) for more details.
-    - Use `camelCase` or `PascalCase` for variable and function names in C++. Refer to [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-naming) for best practices.
-- **Comments**:
-    - Add meaningful comments to explain the purpose of functions, complex logic, and key sections of code.
-    - Avoid redundant comments that merely restate the code.
-- **Line Length**: Limit lines to 80-100 characters for better readability.
+   === Table Size m = 10 ===
+   Key     Index
+   -----------------
+   21      1
+   22      2
+   23      3
+   24      4
+   25      5
+   26      6
+   27      7
+   28      8
+   29      9
+   30      0
+   51      1
+   52      2
+   53      3
+   54      4
+   55      5
+   56      6
+   57      7
+   58      8
+   59      9
+   60      0
 
-### 2. Documentation
-- **Function Headers**:
-    - Include a brief description, input parameters, and return values for each function.
-    - Example:
-        ```c
-        /**
-         * @brief Computes the hash index for an integer key.
-         * @param key The integer key to hash.
-         * @param m The table size.
-         * @return The computed hash index.
-         */
-        int myHashInt(int key, int m);
-        ```
-- **File Headers**:
-    - Add a header comment at the top of each file with the file's purpose, author, and modification history.
+   === Table Size m = 11 ===
+   Key     Index
+   -----------------
+   21      0
+   22      9
+   23      10
+   24      0
+   25      1
+   26      2
+   27      3
+   28      4
+   29      5
+   30      6
+   51      3
+   52      4
+   53      5
+   54      3
+   55      6
+   56      7
+   57      8
+   58      9
+   59      10
+   60      0
 
-### 3. Testing and Observations
-- Test your hash functions with a variety of inputs and table sizes.
-- Document your findings in the `README.md`:
-    - Include tables or charts showing index distributions.
-    - Analyze collision rates and uniformity of the hash function.
-### 4. Error Handling
-- Ensure your code handles edge cases gracefully (e.g., empty strings, zero table size).
-- Validate inputs where necessary and provide meaningful error messages.
+    === Table Size m = 37 ===
+    Key     Index
+    -----------------
+    21      21
+    22      22
+    23      23
+    24      24
+    25      25
+    26      26
+    27      27
+    28      28
+    29      29
+    30      30
+    51      3
+    52      4
+    53      5
+    54      6
+    55      7
+    56      8
+    57      9
+    58      10
+    59      11
+    60      12
 
-By adhering to these practices, you will develop clean, professional, and well-documented code that is easy to understand and maintain.
+    === String Hash (m = 10) ===
+    Key     Index
+    -----------------
+    cat     1
+    dog     4
+    bat     9
+    cow     8
+    ant     0
+    owl     9
+    bee     8
+    hen     9
+    pig     2
+    fox     5
 
-## Notes
-- Ensure your code is well-documented and adheres to the provided coding standards.
-- Include observations and analysis in your `README.md`.
+    === String Hash (m = 11) ===
+    Key     Index
+    -----------------
+    cat     1
+    dog     5
+    bat     9
+    cow     10
+    ant     0
+    owl     4
+    bee     1
+    hen     7
+    pig     5
+    fox     7
 
-## References
-- [Learning Git](https://github.com/doggy8088/Learn-Git-in-30-days/tree/master)
+    === String Hash (m = 37) ===
+    Key     Index
+    -----------------
+    cat     29
+    dog     35
+    bat     27
+    cow     24
+    ant     1
+    owl     26
+    bee     10
+    hen     36
+    pig     16
+    fox     20
+    ...
+  ```
+  ```
+   === Hash Function Observation (C++ Version) ===
+
+  === Table Size m = 10 ===
+  Key     Index
+  -----------------
+  21      1
+  22      2
+  23      3
+  24      4
+  25      5
+  26      6
+  27      7
+  28      8
+  29      9
+  30      0
+  51      1
+  52      2
+  53      3
+  54      4
+  55      5
+  56      6
+  57      7
+  58      8
+  59      9
+  60      0
+
+  === Table Size m = 11 ===
+  Key     Index
+  -----------------
+  21      0
+  22      9
+  23      10
+  24      0
+  25      1
+  26      2
+  27      3
+  28      4
+  29      5
+  30      6
+  51      3
+  52      4
+  53      5
+  54      3
+  55      6
+  56      7
+  57      8
+  58      9
+  59      10
+  60      0
+
+  === Table Size m = 37 ===
+  Key     Index
+  -----------------
+  21      21
+  22      22
+  23      23
+  24      24
+  25      25
+  26      26
+  27      27
+  28      28
+  29      29
+  30      30
+  51      3
+  52      4
+  53      5
+  54      6
+  55      7
+  56      8
+  57      9
+  58      10
+  59      11
+  60      12
+
+  === String Hash (m = 10) ===
+  Key     Index
+  -----------------
+  cat     1
+  dog     4
+  bat     9
+  cow     8
+  ant     0
+  owl     9
+  bee     8
+  hen     9
+  pig     2
+  fox     5
+
+  === String Hash (m = 11) ===
+  Key     Index
+  -----------------
+  cat     1
+  dog     5
+  bat     9
+  cow     10
+  ant     0
+  owl     4
+  bee     1
+  hen     7
+  pig     5
+  fox     7
+
+  === String Hash (m = 37) ===
+  Key     Index
+  -----------------
+  cat     29
+  dog     35
+  bat     27
+  cow     24
+  ant     1
+  owl     26
+  bee     10
+  hen     36
+  pig     16
+  fox     20
+
+  ```
+- Observations: Outputs align with the analysis, Comparing Original and MyFunction, MyFunction exhibits a lower collision rate and improved distribution. These effects become more pronounced as the table size increases.
+For string keys, the technique of appending leading or trailing characters successfully differentiates similar words by assigning them to distinct indices.
+## Analysis
+- The output results show that when comparing the Original function and MyFunction as expected, MyFunction has a lower collision rate and improved distribution.
+- The improvement effect of this code becomes more pronounced as the table size increases, and the most uniform distribution was achieved especially at prime sizes (e.g., m=37).
+- Regarding strings, incorporating the first and last characters into the hash calculation ensures that even similar words are assigned to different indices, further reducing the risk of collisions.
+
+
+## Reflection
+1. In designing this hash function, I focused on balancing simplicity and effectiveness. The approach combining quotient and remainder successfully enhanced key uniqueness as expected without increasing complexity.
+
+2. Through experimentation, I confirmed that table size significantly impacts the uniformity of the distribution. In particular, selecting prime-number sizes can substantially reduce the collision rate.
+
+3. Regarding string keys, I discovered that a small tweak—adding leading and trailing characters—significantly reduces collision rates, though it occurred to me while writing the code. Such a simple approach improves performance merely by adding elements to the index. This highlighted the importance of creativity in breaking down key elements into finer components to enhance uniqueness.
+4. A concern with this code is overflow when handling larger values. To improve this, we need to incorporate measures within the calculation algorithm to limit the number of digits. Given that such measures are necessary, it makes sense that the prime number-based code discussed in class—though not used this time—is a logical approach.
+5. This assignment was more challenging in terms of integrating VSCode with GitHub. As building necessary environments will become more frequent going forward, one of my goals is to become more proficient at setting up environments smoothly and quickly. Furthermore, while the concept behind the code I wrote was simple, precisely because the code itself was simple, I never encountered any errors. This resulted in a somewhat uninspiring outcome for a programming assignment. Moving forward, I want to challenge myself with more complex code.
+
+
+
+
+
+
+
+
 
 
 
