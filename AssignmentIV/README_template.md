@@ -394,14 +394,20 @@ Email: [ryo0516tw@gmail.com]
 - Observations: Outputs align with the analysis, Comparing Original and MyFunction, MyFunction exhibits a lower collision rate and improved distribution. These effects become more pronounced as the table size increases.
 For string keys, the technique of appending leading or trailing characters successfully differentiates similar words by assigning them to distinct indices.
 ## Analysis
-- Prime vs non-prime `m`: Prime table sizes generally result in better distribution and fewer collisions.
-- Patterns or collisions: Non-prime table sizes tend to produce repetitive patterns, leading to more collisions.
-- Improvements: Use a prime table size and a well-designed hash function to enhance distribution.
+- The output results show that when comparing the Original function and MyFunction as expected, MyFunction has a lower collision rate and improved distribution.
+- The improvement effect of this code becomes more pronounced as the table size increases, and the most uniform distribution was achieved especially at prime sizes (e.g., m=37).
+- Regarding strings, incorporating the first and last characters into the hash calculation ensures that even similar words are assigned to different indices, further reducing the risk of collisions.
+
 
 ## Reflection
-1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
-2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
-3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+1. In designing this hash function, I focused on balancing simplicity and effectiveness. The approach combining quotient and remainder successfully enhanced key uniqueness as expected without increasing complexity.
+
+2. Through experimentation, I confirmed that table size significantly impacts the uniformity of the distribution. In particular, selecting prime-number sizes can substantially reduce the collision rate.
+
+3. Regarding string keys, I discovered that a small tweak—adding leading and trailing characters—significantly reduces collision rates, though it occurred to me while writing the code. Such a simple approach improves performance merely by adding elements to the index. This highlighted the importance of creativity in breaking down key elements into finer components to enhance uniqueness.
+4. A concern with this code is overflow when handling larger values. To improve this, we need to incorporate measures within the calculation algorithm to limit the number of digits. Given that such measures are necessary, it makes sense that the prime number-based code discussed in class—though not used this time—is a logical approach.
+5. This assignment was more challenging in terms of integrating VSCode with GitHub. As building necessary environments will become more frequent going forward, one of my goals is to become more proficient at setting up environments smoothly and quickly. Furthermore, while the concept behind the code I wrote was simple, precisely because the code itself was simple, I never encountered any errors. This resulted in a somewhat uninspiring outcome for a programming assignment. Moving forward, I want to challenge myself with more complex code.
+
 
 
 
