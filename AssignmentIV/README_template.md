@@ -12,12 +12,14 @@ Email: [ryo0516tw@gmail.com]
 ### Integer Keys
 - Formula / pseudocode:
   ```text
-  key%m
+  function myHashInt(key, m):
+      return key%m
   ```
 ### Non-integer Keys
 - Formula / pseudocode:
   ```text
-  (int)hash%m
+  function myHashString(str, m):
+      return (int)hash % m
   ```
 - However, since the hash is assigned a value of 0 without converting from str to hash, the result is uniformly 0.
 - Therefore, non-integers are considered non-functional.
@@ -45,16 +47,34 @@ Email: [ryo0516tw@gmail.com]
 ### Integer Keys 
 - Formula / pseudocode:
   ```text
-  [Your implementation here]
+  function myHashInt(key, m):
+      d = key/m //quotient
+      r = key%m //remainder
+      buffer = conect(d, r) //conect d and r
+      hash = toint(buffer)
+      return hash % m
   ```
-- Rationale: [Explain your design choices and how they minimize collisions.]
+- Rationale:
+- In its original state, the collision rate is high and distribution skew occurs. Therefore, to increase key uniqueness, we combine the quotient and remainder. By enhancing the dependency of each key on the algorithm results, we can expect improved collision rates and reduced distribution skew compared to the original state.
 
 ### Non-integer Keys
 - Formula / pseudocode:
   ```text
-  [Your implementation here]
+  function myHashString(str, m):
+      d = 0, r = 0,wordsize = (len(str))
+      for each character c in str:
+          d += (int(c)/m) //sum of quotient 
+          r += (int(c)%m) //sum of remainder
+      if(wordsize = 1):// for avoid zero division
+         wordsize++
+      d +=lastchar / (wordsize-1)
+      r +=firstchar % m
+      buffer = conect(d, r) //conect d and r
+      hash = toint(buffer)
+      return hash % m
   ```
-- Rationale: [Explain your approach and its effectiveness for non-integer keys.]
+- Rationale:
+- Similar to myHashInt, this code enhances key uniqueness by using the ASCII values of each character in the string. It combines the sum of each character's quotient with the sum of their remainders. However, this approach carries the risk of matching total values even for different strings. To mitigate this collision risk, we can add the index element to the algorithm by using the remainder of the last character divided by the array length and the remainder of the first character divided by m.
 
 ## Experimental Setup
 - Table sizes tested (m): 10, 11, 37
@@ -210,6 +230,7 @@ Email: [ryo0516tw@gmail.com]
 1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
 2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
 3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+
 
 
 
