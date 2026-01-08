@@ -31,6 +31,8 @@ systems or organizational structures.
 - Specification of binary tree
 - **Left subtree < root < right subtree (ordering rule), Recursively holds all subtrees**
 - Enables efficient search (**O(log n)** when reasonably balanced)
+- Find the position: **O(h)**
+- Insert the new node: **O(1)**
 - Input integers: 52, 18, 82, 7, 69, 36, 95, 3, 11, 23, 27, 41, 60, 64, 78, 31, 45, 56, 73, 89(Visualization: https://treeconverter.com/)
 <img width="1470" height="464" alt="image" src="https://github.com/user-attachments/assets/c11df34c-d7b6-4f20-aca4-8141d873689a" />
 
@@ -38,6 +40,28 @@ systems or organizational structures.
 -  Specialization of BST
 -  Extra invariant: height kept close to log n
 -  Guarantees predictable performance
+-  **AVL**: BST + Height-balanced
+-  **Red-Black Tree**: BST + Color-balanced
 - Input integers: 52, 18, 82, 7, 69, 36, 95, 3, 11, 23, 27, 41, 60, 64, 78, 31, 45, 56, 73, 89(Visualization: (https://www.cs.usfca.edu/~galles/visualization/AVLtree.html)
 <img width="808" height="380" alt="image" src="https://github.com/user-attachments/assets/55d76cd5-da40-4e5b-a0d1-ed2cf15e0cfb" />
 
+## Balanced
+A balanced tree ensures that the **height difference between subtrees** is minimized.
+If the tree becomes too “deep” on one side (degenerate), search and insertion operations
+degrade from **O(log n)** to **O(n)** — as bad as a linked list.
+
+## Tree Traversal
+### DFT (Depth-First Traversal)
+| Order |Visit Sequence | Description |
+|---|---|---|
+| Preorder (Root–Left–Right) | Root first, then children | Used for copying trees |
+| Inorder (Left–Root–Right) | Sorted order for BST | Used in binary search tree |
+| Postorder (Left–Right–Root) | Children first, root last | Used for deletion or freeing memory |
+
+<img width="1004" height="982" alt="image" src="https://github.com/user-attachments/assets/cb6ce0ca-0db9-4f3f-9f20-6420814d1ebd" />
+imge URL: https://www.linkedin.com/pulse/binary-trees-representation-traversals-implementation-riya-pandey-1kgff/
+
+### BFT (Breadth-First Traversal)
+Level-Order Traversal, visiting nodes level by level using a queue
+<img width="1111" height="588" alt="image" src="https://github.com/user-attachments/assets/90ca8d80-3d08-4357-936c-a9900e8e63ee" />
+image URL: https://www.guru99.com/breadth-first-search-bfs-graph-example.html
