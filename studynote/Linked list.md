@@ -72,7 +72,7 @@ If size has a empty.
 ```text
 [2,3,4, NULL]
     ↓
-3,4 move to index 2,3.(e.g.Array[1] =3 → Array[2] =3)
+3,4 move to index 2,3.(e.g. Array[1] = 3 → Array[2] = 3 )
     ↓
 [2,5,3,4]
 ```
@@ -80,7 +80,7 @@ If size has a empty.
 ```text
 [2]→[3]→[4]
    ↓
-set [2]next→[5]and [5]next→[3]
+set [2]next→[5] and [5]next→[3]
    ↓
 [2]→[5]→[3]→[4]
 ```
