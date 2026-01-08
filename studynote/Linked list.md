@@ -26,3 +26,17 @@ NULL ← | 2 |⇄ | 5 |⇄ | 3 | → NULL
 ←: Next
 →: Prev
 ```
+## Circular Linked List
+Circular Linked List is a variation of a linked list in which the last node points back to the first node, forming a closed loop.
+This allows continuous traversal without reaching a NULL pointer.
+- It may be singly-linked or doubly-linked.
+- It dosen't have tail and NULL.
+```text
+Circular singly Linked List
+       Head
+         ↓
+       -----  -----  -----
+       | 2 |→ | 5 |→ | 3 | 
+       -----  -----  -----
+        ↑______________|
+```
