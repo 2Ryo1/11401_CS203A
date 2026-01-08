@@ -28,4 +28,5 @@ Array[0]=2
 | Delete | **O(n)** | Requires shifting elements |
 | Traverse | **O(n)** | Visit all elements |
 | Search | **O(n)[O(log n)]** | Linear for unsorted, binary for sorted |
+
 [If the array is sorted, we can use Binary Search, which runs in O(log n). ]
