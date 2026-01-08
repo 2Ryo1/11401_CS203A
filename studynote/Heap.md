@@ -43,5 +43,13 @@ Array representation: [10, 15, 30, 40, 50]
      /  \
    40    50
 ```
+## Time Complexity
+| Operation | Time Complexity | Why |
+| peek-max / peek-min | O(1) | Root stored at index 0 |
+| insert (sift-up) | O(log n) | Moves from leaf → root along tree height |
+| extract-max / extract-min (sift-down) | O(log n)| Moves from root → leaf along tree height |
+| increase-key (max-heap) | O(log n) | Uses sift-up |
+| decrease-key (max-heap) | O(log n) | Uses sift-down |
+| build-heap (bottom-up heapify) | O(n)| Floyd’s algorithm (more efficient than n insertions) |
+| heapsort | O(n log n) | n extract-max operations |
 
-  
