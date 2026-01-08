@@ -4,7 +4,7 @@ A linear data structure where elements (nodes) are stored in sequence, but not i
 Head
   ↓
  -----  -----  -----
- | 2 |→| 5 |→ | 3 |→ NULL
+ | 2 |→ | 5 |→ | 3 | → NULL
  -----  -----  -----
-Linked list example: 2 → 5 → 3 → access 5 by following the link from 2
+example:Start at head (2), then follow the next pointer to reach 5
 ```
