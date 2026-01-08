@@ -55,27 +55,27 @@ if use keys are 10 and 21.
 10 and 21 stores in index 1. This problem is collision
 ```
 ### Collision Handling
-- Chaining
+- **Chaining**:
   Maintain a list of <Value₁, Value₂> pairs under the same index.
   ```text
   h(15) = 3 → bucket[3] → [15]
   h(23) = 3 → bucket[3] → [15 -> 23]
   h(7) = 3 → bucket[3] → [15 -> 23 -> 7]
   ```
-- Open Addressing
+- **Open Addressing**:
   Probe another slot (linear, quadratic, or double hashing).Probing is a collision-resolution technique used in open addressing hash tables
   
 | Method | Formula | Behavior | Pros / Cons |
 |---|---|---|---|
-| Linear Probing | (h(k) + i) mod m | Check next slot sequentially | Simple / Primary clustering |
-| Quadratic Probing | (h(k) + c₁·i + c₂·i²) mod m | Gaps grow quadratically | Reduces clustering / May skip slots |
-| Double Hashing | (h₁(k) + i·h₂(k)) mod m | Uses a 2nd hash for step size | Better spread / More computation |
+| **Linear Probing** | (h(k) + i) mod m | Check next slot sequentially | Simple / Primary clustering |
+| **Quadratic Probing** | (h(k) + c₁·i + c₂·i²) mod m | Gaps grow quadratically | Reduces clustering / May skip slots |
+| **Double Hashing** | (h₁(k) + i·h₂(k)) mod m | Uses a 2nd hash for step size | Better spread / More computation |
 
 i = probe sequence index (0, 1, 2, …),m: table size
 
-- Composite Key
+- **Composite Key**:
   Combine multiple attributes (e.g., Key = f(Value₁, Value₂) or Key = f(Value₁ + timestamp)) to increase uniqueness.
-- Hash Refinement
+- **Hash Refinement**:
   Redesign f() to use better bit-mixing or modulo a large prime number.
   
 ## Time Complexity(Chaining)
