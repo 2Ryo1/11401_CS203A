@@ -3,9 +3,10 @@ A collection of elements stored in contiguous memory locations.
 Each element can be accessed directly using an index.
 Array's size is fixed. if the size needs to change, need to recreate array.
 ```text
-    ---------------
+Array
+   -----------------
    | 2 | 1 | 5 | 3 |
-    ---------------
+   -----------------
       ↑  ↑   ↑   ↑ 
 index:0, 1,  2,  3
 ```
