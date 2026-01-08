@@ -49,12 +49,9 @@ First-Out: 2
 # Comparison of Stacks and Queues 
 | Feature | Stack | Queue |
 |---|---|---|
-| Direction of I/O  | Both operations happen at the **top**  | Input at **rear**, output at **front**
- |
+| Direction of I/O  | Both operations happen at the **top**  | Input at **rear**, output at **front**|
 | Array Implementation | Easy to implement with a fixed-size array, and **overflow** if capacity exceeded| Usually implemented as **circular array** to reuse space |
-| Linked List Implementation
- | **O(n)** | s |
-| Insert(middle) | No fixed size (dynamic memory) | Needs pointers for both front and rear |
+| Linked List Implementation|  No fixed size (dynamic memory) | Needs pointers for both front and rear |
 | Memory Management  | Array may waste unused slots if not full  | Linked list uses extra memory for pointers |
 | Performance(Array) | O(1) push/pop (if no resize) | O(1) enqueue/dequeue with circular buffer |
 | Performance(Linked list) | O(1) push/pop at head
