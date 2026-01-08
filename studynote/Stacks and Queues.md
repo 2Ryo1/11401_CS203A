@@ -54,10 +54,6 @@ First-Out: 2
 | Linked List Implementation|  No fixed size (dynamic memory) | Needs pointers for both front and rear |
 | Memory Management  | Array may waste unused slots if not full  | Linked list uses extra memory for pointers |
 | Performance(Array) | O(1) push/pop (if no resize) | O(1) enqueue/dequeue with circular buffer |
-| Performance(Linked list) | O(1) push/pop at head
- | O(1) enqueue (at tail) and dequeue (at head) |
-| Overflow Handling | Fixed-size array may overflow Dynamic array requires
-resizing | Circular array may overflow Linked list has no overflow unless
-memory exhausted |
-|Use Cases|Undo functionality, function calls, expression evaluation |ask scheduling, resource sharing, buffering (e.g., I/O queues,
-printer queues)|
+| Performance(Linked list) | O(1) push/pop at head | O(1) enqueue (at tail) and dequeue (at head) |
+| Overflow Handling | Fixed-size array may overflow Dynamic array requires resizing | Circular array may overflow Linked list has no overflow unless memory exhausted |
+|Use Cases |Undo functionality, function calls, expression evaluation |ask scheduling, resource sharing, buffering (e.g., I/O queues, printer queues)|
