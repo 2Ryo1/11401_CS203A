@@ -9,6 +9,7 @@ Heaps are commonly used to implement priority queues and for heap sort algorithm
 ### Max heap
 - Each parent node’s key is always greater than or equal to their children (parent ≥ children).
 - The maximum element is always at the root.
+
 ```text
 Array representation: [50, 30, 40, 10, 20]
          50
@@ -17,6 +18,7 @@ Array representation: [50, 30, 40, 10, 20]
      /  \
    10    20
 ```
+
 **Insertion (sift-up)**:
 - **Step1.** Insert the new node at the leftmost empty position on the last level (to maintain the complete tree shape).
 - **Step2.** Compare the new node with its parent; if the child is larger, swap them.
@@ -32,7 +34,8 @@ Array representation: [50, 30, 40, 10, 20]
 ### Min heap
 - Each parent node’s key is always less than or equal to their children (parent ≤ children).
 - The minimum element is always at the root.
-  ```text
+
+```text
 Array representation: [10, 15, 30, 40, 50]
          10
         /  \
