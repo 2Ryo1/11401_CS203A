@@ -67,10 +67,74 @@ Directed graph (digraph)
          ➃
 ```
 
-| \ | 0 | 1 | 2 | 3 |
+| \ | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|
-|0| 0 | 0 | 1 | 0 |
-|1| 0 | 0 | 1 | 1 |
-|2| 0 | 0 | 0 | 1 |
-|3| 1 | 0 | 0 | 0 |
+|1| 0 | 0 | 1 | 0 |
+|2| 0 | 0 | 1 | 1 |
+|3| 0 | 0 | 0 | 1 |
+|4| 1 | 0 | 0 | 0 |
 
+### Adjacency List
+A list where each vertex stores only its neighbors.
+### Pros
+- O(V + E) space → excellent for sparse graphs
+- Fast traversal: neighbors of a vertex can be accessed in O(deg(v))
+- Very efficient for BFS/DFS → O(V + E)
+- Easy to scale to large graphs (millions of nodes)
+- Insert/delete edges is O(1)
+### Cons
+- Checking if edge (u, v) exists is O(deg(u))
+- Slightly more complex implementation (nodes + pointers)
+- Memory overhead if using many small linked-list nodes
+
+```text
+Directed graph (digraph)
+        ➀
+         ↑   ↘
+    ➁―――――――→➂
+      ↘  |  ↙
+         ➃
+     Adjlists   data|link
+　　 ______   _______
+[0] ⎿    ⏌→⎿2 | 0⏌
+[0] ⎿    ⏌→⎿2 | ⏌→⎿3 | 0⏌
+[0] ⎿    ⏌→⎿3 | 0⏌
+[0] ⎿    ⏌→⎿0 | 0⏌
+```
+
+## Time Complexity
+| Feature | Adjacency Matrix | Adjacency Matrix List |
+|---|---|---|
+| Edge lookup | O(1) | O(deg(v)) |
+| Add edge (u, v) | O(1) | O(1) |
+| Remove edge (u, v) | O(1) | O(deg(u)) |
+| Space | O(V^2) | O(V+E) |
+| Traversal BFS/DFS | O(V^2) | O(V+E)|
+| Best for | Dense graphs | Sparse graphs |
+| Neighbor iteration | O(V) | O(deg(v)) |
+| Implementation | Simple | Moderate |
+| Dynamic graph? | Hard | Easy |
+
+## Graph vs Tree
+-  Graph: general structure, can have cycles, any shape
+-  Tree: a connected acyclic graph
+**Similar**
+- A visited strategy
+- A recursive depth-first approach (DFS)
+- A queue-based breadth-first approach (BFS)
+- Systematic exploration of nodes
+| Traversal Type | Tree | Graph |
+|---|---|---|
+| DFS | Preorder, Inorder, Postorder | DFS (general) |
+| BFS | Level-order | BFS (general) |
+| Basis | Parent-child | Neighbor adjacency |
+| Need visited[] | No | Yes |
+
+Graph traversal = Tree traversal + visited[] to avoid cycles.
+
+| Property | Tree | Graph |
+|---|---|---|
+| Connectivity | Always connected | May be disconnected |
+| Cycles | No | Yes |
+| Direction | Not directed | Directed or undirected |
+| Hierarchy | Yes(rooted) | No inherent hierarchy |
