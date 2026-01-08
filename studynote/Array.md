@@ -43,7 +43,7 @@ procedure bubbleSort(A[1..n]):
 ### Selection Sort
 Selection Sort minimizes swaps, making it useful when data movement is costly.
 ```text
-procedure bubbleSort(A[1..n]):
+procedure selectionSort(A[1..n]):
   for i from 1 to n-1:
      minIndex = i
      for j from 1+i to n:
@@ -54,7 +54,7 @@ procedure bubbleSort(A[1..n]):
 ### Insertion Sort
 Insertion Sort is efficient for small or nearly sorted datasets, and often used in practice as a helper algorithm.
 ```text
-procedure bubbleSort(A[1..n]):
+procedure insertionSort(A[1..n]):
   for i from 2 to n:
      key= A[i]
      j = i-1
