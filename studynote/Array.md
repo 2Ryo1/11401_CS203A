@@ -6,7 +6,8 @@ Array's size is fixed. if the size needs to change, need to recreate array.
     ---------------
    | 2 | 1 | 5 | 3 |
     ---------------
-index:0,1,2,3,4,
+      ↑  ↑  ↑  ↑ 
+index:0, 1, 2, 3
 ```
 ## Size
 # Static array
