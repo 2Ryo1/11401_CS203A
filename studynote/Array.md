@@ -11,6 +11,13 @@ Array
 index:0, 1,  2,  3
 Array[0]=2
 ```
+## Use Case
+- Programming Language Foundations
+  Example: Python’s list is dynamic, but underneath it relies on arrays that expand when needed.
+- Image Processing
+  Images are represented as collections of pixels, stored in 2D arrays (matrices).
+- Audio and Video Data
+  Example: MP3 decoding uses arrays to store and process audio samples.
 ## Size
 ### Static array
 - Length is fixed.
@@ -33,6 +40,7 @@ Array[0]=2
 ## Sort the Integer
 ### Bubble Sort
 Bubble Sort is simple and mainly used for teaching, but inefficient for large datasets.
+- Typical Use Cases: Teaching basics, demos on microcontrollers, algorithm animations
 ```text
 procedure bubbleSort(A[1..n]):
   for i from 1 to n-1:
@@ -42,6 +50,7 @@ procedure bubbleSort(A[1..n]):
 ```
 ### Selection Sort
 Selection Sort minimizes swaps, making it useful when data movement is costly.
+- Typical Use Cases: Embedded systems with costly writes, small datasets, teaching minimum selection
 ```text
 procedure selectionSort(A[1..n]):
   for i from 1 to n-1:
@@ -53,6 +62,7 @@ procedure selectionSort(A[1..n]):
 ```
 ### Insertion Sort
 Insertion Sort is efficient for small or nearly sorted datasets, and often used in practice as a helper algorithm.
+- Typical Use Cases: Nearly sorted data, incremental updates (e.g. inbox), helper in advanced sorts
 ```text
 procedure insertionSort(A[1..n]):
   for i from 2 to n:
