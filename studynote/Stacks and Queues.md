@@ -1,0 +1,12 @@
+# Stack
+A linear data structure that follows the Last-In-First-Out (LIFO) principle. 
+- LIFO: Elements are added and removed from the same end, called the “top.”
+- (Array: top → integer index of the current top element (initially -1))
+- (Linked list: Node* top → pointer to the head node (stack top))
+## operations
+### push: add element(from end)
+- Array: check top < MAX_SIZE-1, then stack[++top] = value
+- Linked list: create new node, set newNode->next = top
+### pop:  remove element(from end)
+- Array: check top >= 0, then value = stack[top--]
+- Linked check if top != NULL, set top = top->next
