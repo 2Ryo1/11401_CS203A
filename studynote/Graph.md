@@ -123,6 +123,7 @@ Directed graph (digraph)
 - A recursive depth-first approach (DFS)
 - A queue-based breadth-first approach (BFS)
 - Systematic exploration of nodes
+
 | Traversal Type | Tree | Graph |
 |---|---|---|
 | DFS | Preorder, Inorder, Postorder | DFS (general) |
