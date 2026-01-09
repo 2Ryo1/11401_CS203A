@@ -60,6 +60,31 @@ procedure selectionSort(A[1..n]):
            minIndex =j
            swap A[j] and A[minIndex]
 ```
+
+```text
+Array[8] =[64,34,25,12,22,11,90,8]
+i=1; swap(64,34)→swap(64,25)→swap(64,12)→swap(64,22)→swap(64,11)→swap(64,8)
+                     ↓
+ ↓        [34,25,12,22,11,64,8,90]
+i=2; swap(34,25)→swap(34,12)→swap(34,22)→swap(34,11)→swap(64,8)
+                     ↓
+ ↓        [25,12,22,11,34,8,64,90]
+i=3; swap(25,12)→swap(25,22)→swap(25,11)→swap(34,8)
+                     ↓
+ ↓        [12,22,11,25,8,34,64,90]
+i=4; swap(22,11)→swap(25,8)
+                     ↓
+ ↓        [12,11,22,8,25,34,64,90]
+i=5; swap(12,11)→swap(22,8)
+                     ↓
+ ↓        [11,12,8,22,25,34,64,90]
+i=6; swap(12,8)
+           ↓
+ ↓        [11,8,12,22,25,34,64,90]
+i=7; swap(11,8)
+           ↓
+          [8,11,12,22,25,34,64,90]
+```
 ### Insertion Sort
 <ins>Insertion Sort is efficient for small or nearly sorted datasets, and often used in practice as a helper algorithm.</ins>
 - Typical Use Cases: Nearly sorted data, incremental updates (e.g. inbox), helper in advanced sorts
