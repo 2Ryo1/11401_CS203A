@@ -1,6 +1,6 @@
 # Stack
 A linear data structure that follows the **Last-In-First-Out (LIFO)** principle. 
-- LIFO: Elements are added and removed from the same end, called the “top”.
+- LIFO: Elements are added and removed from the same end, called the **top**.
 - (Array: top → integer index of the current top element (initially -1))
 - (Linked list: Node* top → pointer to the head node (stack top))
 ## operations
@@ -49,11 +49,11 @@ First-Out: 2
 # Comparison of Stacks and Queues 
 | Feature | Stack | Queue |
 |---|---|---|
-| Direction of I/O  | Both operations happen at the **top**  | Input at **rear**, output at **front**|
-| Array Implementation | Easy to implement with a fixed-size array, and **overflow** if capacity exceeded| Usually implemented as **circular array** to reuse space |
-| Linked List Implementation|  No fixed size (dynamic memory) | Needs pointers for both front and rear |
-| Memory Management  | Array may waste unused slots if not full  | Linked list uses extra memory for pointers |
-| Performance(Array) | O(1) push/pop (if no resize) | O(1) enqueue/dequeue with circular buffer |
-| Performance(Linked list) | O(1) push/pop at head | O(1) enqueue (at tail) and dequeue (at head) |
-| Overflow Handling | Fixed-size array may overflow Dynamic array requires resizing | Circular array may overflow Linked list has no overflow unless memory exhausted |
-|Use Cases |Undo functionality, function calls, expression evaluation |ask scheduling, resource sharing, buffering (e.g., I/O queues, printer queues)|
+| **Direction of I/O**  | Both operations happen at the **top**  | Input at **rear**, output at **front**|
+| **Array Implementation** | Easy to implement with a fixed-size array, and **overflow** if capacity exceeded| Usually implemented as **circular array** to reuse space |
+| **Linked List Implementation** |  No fixed size (dynamic memory) | Needs pointers for both front and rear |
+| **Memory Management**  | Array may waste unused slots if not full  | Linked list uses extra memory for pointers |
+| **Performance(Array)** | **O(1)** push/pop (if no resize) | **O(1)** enqueue/dequeue with circular buffer |
+| **Performance(Linked list)** | **O(1)** push/pop at head | **O(1)** enqueue (at tail) and dequeue (at head) |
+| **Overflow Handling** | Fixed-size array may overflow Dynamic array requires resizing | Circular array may overflow Linked list has no overflow unless memory exhausted |
+| **Use Cases** |<ins>Undo functionality, function calls, expression evaluation</ins> |<ins>ask scheduling, resource sharing, buffering</ins> (e.g., I/O queues, printer queues)|
