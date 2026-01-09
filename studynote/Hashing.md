@@ -1,5 +1,5 @@
 # Hash Table
-- structure: Array(used for bucket storage) + Linked list(handles collisions)
+- structure: **Array(used for bucket storage) + Linked list(handles collisions)**
 - Each bucket stores a linked list of items with same hash value
 ## Key
 key is the unique identifier used in a hash table to locate a value. 
@@ -19,34 +19,36 @@ which points to where the corresponding value is stored.
 
 | Aspect | Static Hashing | Dynamic Hashing |
 |---|---|---|
-| Hash Function | Constant | Adaptive (changes with size) |
-| Memory Usage | Predictable | May expand dynamically |
-| Performance | Degrades with high load | Remains efficient |
-| Rehashing | Simple | Only local bucket splits |
-| Implementation | Polynomial rolling hash | Complex (directory or pointer-based) |
+| **Hash Function** | Constant | Adaptive (changes with size) |
+| **Memory Usage** | Predictable | May expand dynamically |
+| **Performance** | Degrades with high load | Remains efficient |
+| **Rehashing** | Simple | Only local bucket splits |
+| **Implementation** | Polynomial rolling hash | Complex (directory or pointer-based) |
 
 ## Load Factor (α)
 measures how full the table is: **α = number of elements / table size**
 
 ## Hashing
 A data structure that stores key-value pairs using a hash function to compute an index into an
-array of buckets. It is a mathematical formula that converts a key (data) into a table index.
+array of buckets. **It is a mathematical formula that converts a key (data) into a table index**.
+
+
 **A hash function tells you “where to store” and “where to find” data in the hash table.**
 - This allows for average constant-time complexity for insertion, deletion, and lookup operations.
 - Hash tables handle collisions through techniques like chaining or open addressing, making them
-ideal for fast data retrieval (average O(1) time).
+ideal for fast data retrieval (**average O(1) time**).
 ### Hash Function
 Hash function (mapping function) converts a key into an integer index.
 | Method | Formula/Idea | Example |
 |---|---|---|
-| Division Method | h(k) = k mod m | key = 123, m = 10 → index = 3 |
-| Multiplication Method | h(k) = floor(m * (k*A mod 1)), 0 < A < 1 | A ≈ 0.618 |
-| Folding Method | Split key into parts and add them | Key = 123456 → 12+34+56 = 102 |
-| String Hashing | Polynomial rolling hash | h(s) = (Σ s[i] * p^i) mod m |
+| **Division Method** | h(k) = k mod m | key = 123, m = 10 → index = 3 |
+| **Multiplication Method** | h(k) = floor(m * (k*A mod 1)), 0 < A < 1 | A ≈ 0.618 |
+| **Folding Method** | Split key into parts and add them | Key = 123456 → 12+34+56 = 102 |
+| **String Hashing** | Polynomial rolling hash | h(s) = (Σ s[i] * p^i) mod m |
 
 ## Collision
-A collision occurs in a hash table when two or more different keys are mapped by the hash
-function to the same index (bucket) in the table.Collision = different keys, same hash address (index).
+A collision occurs in a hash table <ins>when two or more different keys are mapped by the hash
+function to the same index (bucket) in the table</ins>.Collision = different keys, same hash address (index).
 ```text
 Example
 function: h(k)=key mod 3,
