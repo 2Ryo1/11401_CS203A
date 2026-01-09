@@ -48,7 +48,9 @@ Hash function (mapping function) converts a key into an integer index.
 
 ## Collision
 A collision occurs in a hash table <ins>when two or more different keys are mapped by the hash
-function to the same index (bucket) in the table</ins>.Collision = different keys, same hash address (index).
+function to the same index (bucket) in the table</ins>. 
+
+Collision = different keys, same hash address (index).
 ```text
 Example
 function: h(k)=key mod 3,
