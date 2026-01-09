@@ -1,9 +1,9 @@
 # Graph
 A collection of vertices (nodes) connected by edges that can represent relationships between
-entities. Unlike trees, graphs can have cycles and edges can be directed or undirected.
+entities. Unlike trees, **graphs can have cycles and edges can be directed or undirected**.
 
-Graphs are used to model networks like social connections, transportation systems, or web
-pages with hyperlinks.
+**Graphs are used to model networks like social connections, transportation systems, or web
+pages with hyperlinks**.
 
 **G = (V, E)**
 - V: a set of vertices (also called nodes or points)
@@ -21,17 +21,17 @@ Edge with label: ―――――――
 
 ```text
 Connected Graph
-        ➀
+　　     ➀
      /   |   \
-    ➁――――――――➂
+    ➁―――+――――➂
       \  |  /
-         ➃
+　　     ➃
 Directed graph (digraph)
-        ➀
+　　     ➀
      ↙   |   ↖
-    ➁―――――――→➂
+    ➁―――+―――→➂
       ↘  ↓  ↗
-         ➃
+　　     ➃
 ```
 ## Classification
 | Type | Description | Example |
@@ -48,23 +48,23 @@ Directed graph (digraph)
 ## Adjacency Matrix
 A **V × V** matrix that records whether an edge exists between two vertices.
 ### Pros
-- O(1) edge lookup → matrix[u][v] is immediate
+- **O(1)** edge lookup → **matrix[u][v]** is immediate
 - Simple implementation → easy to code, easy to visualize
-- Works well for dense graphs (many edges)
-- Good for algorithms requiring fast access, e.g., Floyd–Warshall
+- Works well for **dense graphs (many edges)**
+- Good for algorithms requiring **fast access**, e.g., Floyd–Warshall
 - Natural fit for storing weights in weighted graphs
 ### Cons
-- O(V²) space, even if there are very few edges
-- Wasteful for sparse graphs (most real-world graphs)
-- Getting neighbors requires scanning the whole row → O(V)
+- **O(V²)** space, even if there are very few edges
+- Wasteful for **sparse graphs (most real-world graphs)**
+- Getting neighbors requires scanning the whole row → **O(V)**
 - Harder to dynamically insert/remove vertices
 ```text
 Directed graph (digraph)
-        ➀
+　　     ➀
          ↑   ↘
-    ➁―――――――→➂
+    ➁―――+―――→➂
       ↘  |  ↙
-         ➃
+　　     ➃
 ```
 
 | \ | 1 | 2 | 3 | 4 |
@@ -77,29 +77,29 @@ Directed graph (digraph)
 ### Adjacency List
 A list where each vertex stores only its neighbors.
 ### Pros
-- O(V + E) space → excellent for sparse graphs
-- Fast traversal: neighbors of a vertex can be accessed in O(deg(v))
-- Very efficient for BFS/DFS → O(V + E)
+- **O(V + E) space** → excellent for sparse graphs
+- Fast traversal: neighbors of a vertex can be accessed in **O(deg(v))**
+- Very efficient for **BFS/DFS** → O(V + E)
 - Easy to scale to large graphs (millions of nodes)
-- Insert/delete edges is O(1)
+- Insert/delete edges is **O(1)**
 ### Cons
-- Checking if edge (u, v) exists is O(deg(u))
+- Checking if edge (u, v) exists is **O(deg(u))**
 - Slightly more complex implementation (nodes + pointers)
 - Memory overhead if using many small linked-list nodes
 
 ```text
 Directed graph (digraph)
-        ➀
+　　     ➀
          ↑   ↘
-    ➁―――――――→➂
+    ➁―――+―――→➂
       ↘  |  ↙
-         ➃
+　　     ➃
      Adjlists   data|link
 　　 ______   _______
 [0] ⎿    ⏌→⎿2 | 0⏌
-[0] ⎿    ⏌→⎿2 | ⏌→⎿3 | 0⏌
-[0] ⎿    ⏌→⎿3 | 0⏌
-[0] ⎿    ⏌→⎿0 | 0⏌
+[1] ⎿    ⏌→⎿2 | ・⏌→⎿3 | 0⏌
+[2] ⎿    ⏌→⎿3 | 0⏌
+[3] ⎿    ⏌→⎿0 | 0⏌
 ```
 
 ## Time Complexity
