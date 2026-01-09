@@ -1,7 +1,7 @@
 # Array
 A collection of elements stored in contiguous memory locations.
-Each element can be accessed directly using an index.
-Array's **size is fixed**. **if the size needs to change, need to recreate array**.
+- Each element can be accessed directly using an index.
+- Array's **size is fixed**. **if the size needs to change, need to recreate array**.
 ```text
 Array[4] → The Array has four elements
      _______________
