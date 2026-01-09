@@ -1,13 +1,13 @@
 # Heap
-Heap is a complete binary tree that satisfies the heap-order property.
+Heap is a <ins>complete binary tree that satisfies the heap-order property.</ins>
 ### The heap is a complete binary tree:
 - Every level is completely filled, except possibly the last level.
 - The last level‘s nodes are filled from left to right.
 
 ## Heap-Order Ordering
-Heaps are commonly used to implement priority queues and for heap sort algorithms.
+Heaps are commonly used to implement <ins>priority queues and for heap sort algorithms.</ins>
 ### Max heap
-- Each parent node’s key is always greater than or equal to their children (parent ≥ children).
+- Each parent node’s key is always greater than or equal to their children **(parent ≥ children)**.
 - The maximum element is always at the root.
 
 ```text
@@ -32,7 +32,7 @@ Array representation: [50, 30, 40, 10, 20]
 
 
 ### Min heap
-- Each parent node’s key is always less than or equal to their children (parent ≤ children).
+- Each parent node’s key is always less than or equal to their children **(parent ≤ children)**.
 - The minimum element is always at the root.
 
 ```text
@@ -47,11 +47,11 @@ Array representation: [10, 15, 30, 40, 50]
 ## Time Complexity
 | Operation | Time Complexity | Why |
 |---|---|---|
-| peek-max / peek-min | O(1) | Root stored at index 0 |
-| insert (sift-up) | O(log n) | Moves from leaf → root along tree height |
-| extract-max / extract-min (sift-down) | O(log n)| Moves from root → leaf along tree height |
-| increase-key (max-heap) | O(log n) | Uses sift-up |
-| decrease-key (max-heap) | O(log n) | Uses sift-down |
-| build-heap (bottom-up heapify) | O(n)| Floyd’s algorithm (more efficient than n insertions) |
-| heapsort | O(n log n) | n extract-max operations |
+| **peek-max / peek-min** | O(1) | Root stored at index 0 |
+| **insert (sift-up)** | O(log n) | Moves from leaf → root along tree height |
+| **extract-max / extract-min (sift-down)** | O(log n)| Moves from root → leaf along tree height |
+| **increase-key (max-heap)** | O(log n) | Uses sift-up |
+| **decrease-key (max-heap)** | O(log n) | Uses sift-down |
+| **build-heap (bottom-up heapify)** | O(n)| Floyd’s algorithm (more efficient than n insertions) |
+| **heapsort** | O(n log n) | n extract-max operations |
 
