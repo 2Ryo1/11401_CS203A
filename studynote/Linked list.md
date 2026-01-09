@@ -21,8 +21,8 @@ Doubly Linked List is a type of linked list in which each node contains two poin
        _____   _____   _____
 NULL ← | 2 | ⇄ | 5 | ⇄ | 3 | → NULL
        ￣￣￣   ￣￣    ￣￣￣  
-                       ↑
-                     Tail
+                         ↑
+                        Tail
 ←: Next
 →: Prev
 ```
