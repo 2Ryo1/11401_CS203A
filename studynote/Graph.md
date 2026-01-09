@@ -109,8 +109,8 @@ Directed graph (digraph)
 | **Edge lookup** | O(1) | O(deg(v)) |
 | **Add edge (u, v)** | O(1) | O(1) |
 | **Remove edge (u, v)** | O(1) | O(deg(u)) |
-| **Space** | O(V^2) | O(V+E) |
-| **Traversal BFS/DFS** | O(V^2) | O(V+E)|
+| **Space** | O(V²) | O(V+E) |
+| **Traversal BFS/DFS** | O(V²) | O(V+E)|
 | **Best for** | Dense graphs | Sparse graphs |
 | **Neighbor iteration** | O(V) | O(deg(v)) |
 | **Implementation** | Simple | Moderate |
