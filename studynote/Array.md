@@ -1,7 +1,7 @@
 # Array
 A collection of elements stored in contiguous memory locations.
 Each element can be accessed directly using an index.
-Array's size is fixed. if the size needs to change, need to recreate array.
+Array's **size is fixed**. **if the size needs to change, need to recreate array**.
 ```text
 Array
    -----------------
@@ -20,12 +20,12 @@ Array[0]=2
   Example: MP3 decoding uses arrays to store and process audio samples.
 ## Size
 ### Static array
-- Length is fixed.
-- The number of elements is determined at compile time.
+- Length is **fixed**.
+- The number of elements is **determined** at runtime.
 ### Dynamic array
-- Length can be changed.
-- The number of elements can be allocated or resized at runtime.
-- When using malloc or realloc to increase the array size, most to free the allocated memory, after use to avoid memory leaks.
+- Length **can be changed**.
+- The number of elements can be **allocated** or resized at runtime.
+- **When using malloc or realloc to increase the array size, most to free the allocated memory, after use to avoid memory leaks**.
 ## Complexity Analysis
 | Operation | Complexity | Notes |
 |---|---|---|
