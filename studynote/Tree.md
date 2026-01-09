@@ -1,5 +1,5 @@
 # Tree
-A tree is a non-linear hierarchical data structure consisting of nodes connected by edges.
+A tree is <ins>a non-linear hierarchical data structure consisting of nodes connected by edges.</ins>
 - Each node can have zero or more child nodes, forming parent-child relationships.
 - Trees have no cycles and are commonly used for representing hierarchical relationships like file
 systems or organizational structures.
@@ -9,13 +9,13 @@ systems or organizational structures.
 
 | Term | Definition |
 |---|---|
-| Root | The topmost node of the tree |
-| Parent / Child | A node that has branches leading to other nodes |
-| Leaf | A node with no children |
-| Sibling | Nodes that share the same parent |
-| Edge | A connection between two nodes |
-| Depth / Height | Depth = distance from root; Height = longest path to leaf |
-| Fan-out (Degree) | The number of children a node can have |
+| **Root** | The topmost node of the tree |
+| **Parent / Child** | A node that has branches leading to other nodes |
+| **Leaf** | A node with no children |
+| **Sibling** | Nodes that share the same parent |
+| **Edge** | A connection between two nodes |
+| **Depth / Height** | Depth = distance from root; Height = longest path to leaf |
+| **Fan-out (Degree)** | The number of children a node can have |
 
 ## Tree Family
 ### Tree
@@ -54,11 +54,12 @@ degrade from **O(log n)** to **O(n)** — as bad as a linked list.
 ### DFT (Depth-First Traversal)
 | Order |Visit Sequence | Description |
 |---|---|---|
-| Preorder (Root–Left–Right) | Root first, then children | Used for copying trees |
-| Inorder (Left–Root–Right) | Sorted order for BST | Used in binary search tree |
-| Postorder (Left–Right–Root) | Children first, root last | Used for deletion or freeing memory |
+| **Preorder (Root–Left–Right)** | Root first, then children | Used for copying trees |
+| **Inorder (Left–Root–Right)** | Sorted order for BST | Used in binary search tree |
+| **Postorder (Left–Right–Root)** | Children first, root last | Used for deletion or freeing memory |
 
-<img width="1004" height="982" alt="image" src="https://github.com/user-attachments/assets/cb6ce0ca-0db9-4f3f-9f20-6420814d1ebd" />
+<img width="502" height="400" alt="image" src="https://github.com/user-attachments/assets/cb6ce0ca-0db9-4f3f-9f20-6420814d1ebd" />
+
 imge URL: https://www.linkedin.com/pulse/binary-trees-representation-traversals-implementation-riya-pandey-1kgff/
 
 ### BFT (Breadth-First Traversal)
