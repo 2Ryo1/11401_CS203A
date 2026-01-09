@@ -39,7 +39,7 @@ Array[0]=2
 [If the array is sorted, we can use Binary Search, which runs in O(log n).]
 ## Sort the Integer
 ### Bubble Sort
-Bubble Sort is simple and mainly used for teaching, but inefficient for large datasets.
+<ins>Bubble Sort is simple and mainly used for teaching, but inefficient for large datasets.</ins>
 - Typical Use Cases: Teaching basics, demos on microcontrollers, algorithm animations
 ```text
 procedure bubbleSort(A[1..n]):
@@ -49,7 +49,7 @@ procedure bubbleSort(A[1..n]):
            swap A[j] and A[j+1]
 ```
 ### Selection Sort
-Selection Sort minimizes swaps, making it useful when data movement is costly.
+<ins>Selection Sort minimizes swaps, making it useful when data movement is costly.</ins>
 - Typical Use Cases: Embedded systems with costly writes, small datasets, teaching minimum selection
 ```text
 procedure selectionSort(A[1..n]):
@@ -61,7 +61,7 @@ procedure selectionSort(A[1..n]):
            swap A[j] and A[minIndex]
 ```
 ### Insertion Sort
-Insertion Sort is efficient for small or nearly sorted datasets, and often used in practice as a helper algorithm.
+<ins>Insertion Sort is efficient for small or nearly sorted datasets, and often used in practice as a helper algorithm.</ins>
 - Typical Use Cases: Nearly sorted data, incremental updates (e.g. inbox), helper in advanced sorts
 ```text
 procedure insertionSort(A[1..n]):
