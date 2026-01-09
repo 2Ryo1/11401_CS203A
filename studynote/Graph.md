@@ -36,16 +36,17 @@ Directed graph (digraph)
 ## Classification
 | Type | Description | Example |
 |---|---|---|
-| Undirected Graph | Edges have no direction | Friendship network |
-| Directed Graph (Digraph) | Edges have direction | Instagram “following” |
-| Weighted Graph | Each edge has a cost | Google Maps distance |
-| Unweighted Graph | All edges equal | Board game map |
-| Cyclic Graph | Has loops | City ring road |
-| Acyclic Graph | No loops | Family tree |
-| Family tree | Every node reachable | Road network |
-| Disconnected Graph | Some nodes isolated | Islands without bridge |
+| **Undirected Graph** | Edges have no direction | Friendship network |
+| **Directed Graph (Digraph)** | Edges have direction | Instagram “following” |
+| **Weighted Graph** | Each edge has a cost | Google Maps distance |
+| **Unweighted Graph** | All edges equal | Board game map |
+| **Cyclic Graph** | Has loops | City ring road |
+| **Acyclic Graph** | No loops | Family tree |
+| **Family tree** | Every node reachable | Road network |
+| **Disconnected Graph** | Some nodes isolated | Islands without bridge |
 
-## Adjacency Matrix
+
+## <ins>Adjacency Matrix</ins>
 A **V × V** matrix that records whether an edge exists between two vertices.
 ### Pros
 - **O(1)** edge lookup → **matrix[u][v]** is immediate
@@ -74,7 +75,7 @@ Directed graph (digraph)
 |3| 0 | 0 | 0 | 1 |
 |4| 1 | 0 | 0 | 0 |
 
-### Adjacency List
+### <ins>Adjacency List</ins>
 A list where each vertex stores only its neighbors.
 ### Pros
 - **O(V + E) space** → excellent for sparse graphs
@@ -105,15 +106,15 @@ Directed graph (digraph)
 ## Time Complexity
 | Feature | Adjacency Matrix | Adjacency Matrix List |
 |---|---|---|
-| Edge lookup | O(1) | O(deg(v)) |
-| Add edge (u, v) | O(1) | O(1) |
-| Remove edge (u, v) | O(1) | O(deg(u)) |
-| Space | O(V^2) | O(V+E) |
-| Traversal BFS/DFS | O(V^2) | O(V+E)|
-| Best for | Dense graphs | Sparse graphs |
-| Neighbor iteration | O(V) | O(deg(v)) |
-| Implementation | Simple | Moderate |
-| Dynamic graph? | Hard | Easy |
+| **Edge lookup** | O(1) | O(deg(v)) |
+| **Add edge (u, v)** | O(1) | O(1) |
+| **Remove edge (u, v)** | O(1) | O(deg(u)) |
+| **Space** | O(V^2) | O(V+E) |
+| **Traversal BFS/DFS** | O(V^2) | O(V+E)|
+| **Best for** | Dense graphs | Sparse graphs |
+| **Neighbor iteration** | O(V) | O(deg(v)) |
+| **Implementation** | Simple | Moderate |
+| **Dynamic graph** | Hard | Easy |
 
 ## Graph vs Tree
 -  Graph: general structure, can have cycles, any shape
@@ -126,16 +127,16 @@ Directed graph (digraph)
 
 | Traversal Type | Tree | Graph |
 |---|---|---|
-| DFS | Preorder, Inorder, Postorder | DFS (general) |
-| BFS | Level-order | BFS (general) |
-| Basis | Parent-child | Neighbor adjacency |
-| Need visited[] | No | Yes |
+| **DFS** | Preorder, Inorder, Postorder | DFS (general) |
+| **BFS** | Level-order | BFS (general) |
+| **Basis** | Parent-child | Neighbor adjacency |
+| **Need visited[]** | No | Yes |
 
-Graph traversal = Tree traversal + visited[] to avoid cycles.
+<ins>Graph traversal = Tree traversal + visited[] to avoid cycles.</ins>
 
 | Property | Tree | Graph |
 |---|---|---|
-| Connectivity | Always connected | May be disconnected |
-| Cycles | No | Yes |
-| Direction | Not directed | Directed or undirected |
-| Hierarchy | Yes(rooted) | No inherent hierarchy |
+| **Connectivity** | Always connected | May be disconnected |
+| **Cycles** | No | Yes |
+| **Direction** | Not directed | Directed or undirected |
+| **Hierarchy** | Yes(rooted) | No inherent hierarchy |
