@@ -47,7 +47,7 @@ Circular singly Linked List
 | **Update** | **O(n)<sub>(1)</sub>** | Requires locating the target node |
 | **Insert(front)** | **O(n)** | Insert directly at head |
 | **Insert(middle)** | **O(1)** | Position must be located by traversal |
-| **Insert(end)** | **O(n)<sub>(2)</sub>O(1)<sub>(3)</sub>]** | Depends on whether the last node is directly reachable |
+| **Insert(end)** | **O(n)<sub>(2)</sub>O(1)<sub>(3)</sub>** | Depends on whether the last node is directly reachable |
 | **Delete** | **O(1)<sub>(4)</sub>O(n)** | Target node must be found before removal |
 | **Traverse** | **O(n)** | Each node must be visited sequentially. |
 | **Search** | **O(n)** | Requires linear traversal to find the target node. |
