@@ -1,12 +1,12 @@
 # Linked list
-A linear data structure where elements (nodes) are stored in sequence, but not in contiguous memory locations. Each node has data and a reference (pointer) to the next node. Linked lists can be changed during runtime.
+A linear data structure where elements (**nodes**) are stored in sequence, but not in contiguous memory locations. Each node has data and a reference (**pointer**) to the next node. **Linked lists can be changed during runtime**.
 ```text
 Singly Linked List (basic form)
 Head
   ↓
- -----  -----  -----
+ _____  _____  _____
  | 2 |→ | 5 |→ | 3 | → NULL
- -----  -----  -----
+ ￣￣￣  ￣￣   ￣￣￣
                  ↑
                 Tail
 Example:Start at head (2), then follow the next pointer to reach 5
@@ -18,39 +18,39 @@ Doubly Linked List is a type of linked list in which each node contains two poin
 ```text
        Head
          ↓
-       -----  -----  -----
-NULL ← | 2 |⇄ | 5 |⇄ | 3 | → NULL
-       -----  -----  -----
+       _____   _____   _____
+NULL ← | 2 | ⇄ | 5 | ⇄ | 3 | → NULL
+       ￣￣￣   ￣￣    ￣￣￣  
                        ↑
                      Tail
 ←: Next
 →: Prev
 ```
 ## Circular Linked List
-Circular Linked List is a variation of a linked list in which the last node points back to the first node, forming a closed loop.
-This allows continuous traversal without reaching a NULL pointer.
+Circular Linked List is a variation of a linked list in which the last node points back to the first node, **forming a closed loop**.
+This allows continuous traversal **without reaching a NULL pointer**.
 - It may be singly-linked or doubly-linked.
 - It dosen't have tail and NULL.
 ```text
 Circular singly Linked List
        Head
          ↓
-       -----  -----  -----
-       | 2 |→ | 5 |→ | 3 | 
-       -----  -----  -----
-        ↑______________|
+       _____   _____   _____
+       | 2 | ⇄ | 5 | ⇄ | 3 | 
+       ￣￣￣   ￣￣    ￣￣￣ 
+         ↑______________|
 ```
 ## Complexity Analysis
 | Operation | Complexity | Notes |
 |---|---|---|
-| Access | **O(n)** | No direct index access; must traverse from head |
-| Update | **(1)O[n]** | Requires locating the target node |
-| Insert(front) | **O(n)** | Insert directly at head |
-| Insert(middle) | **O(1)** | Position must be located by traversal |
-| Insert(end) | **[(2)O(n)][(3)O(1)]** | Depends on whether the last node is directly reachable |
-| Delete | **O(n)[(4)O(1)]** | Target node must be found before removal |
-| Traverse | **O(n)** | Each node must be visited sequentially. |
-| Search | **O(n)** | Requires linear traversal to find the target node. |
+| **Access** | **O(n)** | No direct index access; must traverse from head |
+| **Update** | **O(n)<sub>(1)</sub>** | Requires locating the target node |
+| **Insert(front)** | **O(n)** | Insert directly at head |
+| **Insert(middle)** | **O(1)** | Position must be located by traversal |
+| **Insert(end)** | **O(n)<sub>(2)</sub>O(1)<sub>(3)</sub>]** | Depends on whether the last node is directly reachable |
+| **Delete** | **O(1)<sub>(4)</sub>O(n)** | Target node must be found before removal |
+| **Traverse** | **O(n)** | Each node must be visited sequentially. |
+| **Search** | **O(n)** | Requires linear traversal to find the target node. |
 
 - (1): If node pointer is known, Update is O(1)
 - (2): O(n) unless tail pointer is used
