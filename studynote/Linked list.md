@@ -56,11 +56,11 @@ Circular singly Linked List
 - (2): O(n) unless tail pointer is used
 - (3): With tail pointer and singly linked list
 - (4): If node pointer is known, deletion is O(1)
-## Insert(middle)
+## Insert(middle) Array vs Linked list
 Give integers 2,3,4
 Insert 5 between 2 and 3.
-# Array
-If size is full.
+### Array
+- If size is full.
 ```text
 [2,3,4]
    ↓
@@ -68,7 +68,7 @@ recreate and redeclare
    ↓
 [2,5,3,4]
 ```
-If size has a empty.
+- If size has a empty.
 ```text
 [2,3,4, NULL]
     ↓
@@ -76,7 +76,7 @@ If size has a empty.
     ↓
 [2,5,3,4]
 ```
-# Linked List
+### Linked List
 ```text
 [2]→[3]→[4]
    ↓
