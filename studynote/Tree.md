@@ -7,6 +7,8 @@ systems or organizational structures.
 <img width="774" height="201" alt="image" src="https://github.com/user-attachments/assets/6449f08c-fe5c-4d77-b4e8-21e7c8efaa44" />
 <img width="808" height="214" alt="image" src="https://github.com/user-attachments/assets/b178fc94-7593-4d84-ad95-bd85a8c2b26e" />
 
+image:(https://github.com/yfhuang) make PDF
+
 | Term | Definition |
 |---|---|
 | **Root** | The topmost node of the tree |
