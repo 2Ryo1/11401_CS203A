@@ -60,7 +60,7 @@ Circular singly Linked List
 Give integers 2,3,4
 Insert 5 between 2 and 3.
 ### Array
-- If size is full.
+- When size is full.
 ```text
 [2,3,4]
    ↓
@@ -68,7 +68,7 @@ recreate and redeclare
    ↓
 [2,5,3,4]
 ```
-- If size has a empty.
+- When size has a empty.
 ```text
 [2,3,4, NULL]
     ↓
