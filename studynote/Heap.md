@@ -4,6 +4,16 @@ Heap is a <ins>complete binary tree that satisfies the heap-order property.</ins
 - Every level is completely filled, except possibly the last level.
 - The last level‘s nodes are filled from left to right.
 
+## Priority in a Heap
+Priority = Importance or Urgency
+
+| Example | Priority Interpretation |
+|---|---|
+| Emergency patient with triage level 5 | High priority |
+| OS process with small remaining time | High priority (shortest job first) |
+| Network packet with high QoS level | High priority |
+
+
 ## Heap-Order Ordering
 Heaps are commonly used to implement <ins>priority queues and for heap sort algorithms.</ins>
 ### Max heap
