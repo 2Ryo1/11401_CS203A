@@ -33,7 +33,7 @@ Array[0]=2
 ### Static array
 - Length is **fixed**.
 - The number of elements is **determined** at runtime.
-```text
+```C
 //C
 // declaration
 int array[5];
@@ -46,7 +46,7 @@ int array[5] = {10, 20, 30, 40, 50};
 - Length **can be changed**.
 - The number of elements can be **allocated** or resized at runtime.
 - **When using malloc or realloc to increase the array size, most to free the allocated memory, after use to avoid memory leaks**.
-```text
+```C
 //C
 int *array;
 int n = 10;
