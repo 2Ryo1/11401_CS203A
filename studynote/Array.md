@@ -21,6 +21,7 @@ Array[0]=2
 - <ins>**Search(A, x):** Find index of value x (linear or binary depending on sorting).</ins>
 - <ins>**Resize(A, m):** Increase or decrease the size of the array (dynamic array using malloc/realloc in C)</ins>
 
+
 ## Use Case
 - Programming Language Foundations
   Example: Python’s list is dynamic, but underneath it relies on arrays that expand when needed.
