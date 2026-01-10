@@ -1,5 +1,5 @@
 # Tree
-A tree is <ins>a non-linear hierarchical data structure consisting of nodes connected by edges.</ins>
+Tree is <ins>a non-linear hierarchical data structure consisting of nodes connected by edges.</ins>
 - Each node can have zero or more child nodes, forming parent-child relationships.
 - Trees have no cycles and are commonly used for representing hierarchical relationships like file
 systems or organizational structures.
@@ -38,6 +38,32 @@ image: images of (https://github.com/yfhuang) data strctuure PDF
 - Input integers: 52, 18, 82, 7, 69, 36, 95, 3, 11, 23, 27, 41, 60, 64, 78, 31, 45, 56, 73, 89(Visualization: https://treeconverter.com/)
 <img width="1470" height="464" alt="image" src="https://github.com/user-attachments/assets/c11df34c-d7b6-4f20-aca4-8141d873689a" />
 
+- **Binary Search Tree: Delete**
+When delete a node of Binary Search Tree, replase the node with [max of the left subtree] or [min of the right subtree] from ordering property (left < parent < right)
+
+Example:When delete 18 of  Tree, replase the node with 11 or 23 from ordering property (left < parent < right)
+```text
+     　            52
+      　   ________|____________=
+          |
+    ――――――18――――――――
+    7               36
+ ___|___        _____|_____
+3       11     23         45
+                |__
+                  27
+
+     　            52
+      　   ________|____________=
+          |
+    ――――――×―――――――――――
+    7                36
+ ___|___ ↑ OR   ↑_____|_____
+3       11     23         45
+                |__
+                  27
+```
+
 ### Balanced BST (AVL / Red-Black)
 -  Specialization of BST
 -  Extra invariant: height kept close to log n
@@ -68,3 +94,4 @@ imge URL: https://www.linkedin.com/pulse/binary-trees-representation-traversals-
 Level-Order Traversal, visiting nodes level by level using a queue
 <img width="1111" height="588" alt="image" src="https://github.com/user-attachments/assets/90ca8d80-3d08-4357-936c-a9900e8e63ee" />
 image URL: https://www.guru99.com/breadth-first-search-bfs-graph-example.html
+
