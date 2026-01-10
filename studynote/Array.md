@@ -23,11 +23,11 @@ Array[0]=2
 
 
 ## Use Case
-- Programming Language Foundations
+- **Programming Language Foundations**
   Example: Python’s list is dynamic, but underneath it relies on arrays that expand when needed.
-- Image Processing
+- **Image Processing**
   Images are represented as collections of pixels, stored in 2D arrays (matrices).
-- Audio and Video Data
+- **Audio and Video Data**
   Example: MP3 decoding uses arrays to store and process audio samples.
 ## Size
 ### Static array
