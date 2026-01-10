@@ -150,6 +150,7 @@ recreate and redeclare
 [2,5,3,4]
 ```
 ### Linked List
+https://github.com/2Ryo1/11401_CS203A/blob/main/studynote/Array.md#selection-sort
 ```text
 [2]→[3]→[4]
    ↓
