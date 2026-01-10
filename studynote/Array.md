@@ -12,14 +12,14 @@ index:0,  1,  2,  3
 Array[0]=2
 ```
 ## Operations
-- <ins>**Create(n):** Create an array of size n.</ins>
-- <ins>**Access(A, i):** Return the element at index i.</ins>
-- <ins>**Update(A, i, x):** Replace the element at index i with value x.</ins>
-- <ins>**Insert(A, i, x):** Insert value x at index i (may require shifting elements).</ins>
-- <ins>**Delete(A, i):** Delete element at index i (may require shifting elements).</ins>
-- <ins>**Traverse(A):** Visit each element of the array in order.</ins>
-- <ins>**Search(A, x):** Find index of value x (linear or binary depending on sorting).</ins>
-- <ins>**Resize(A, m):** Increase or decrease the size of the array (dynamic array using malloc/realloc in C)</ins>
+- **Create(n):** <ins>Create an array of size n.</ins>
+- **Access(A, i):** <ins>Return the element at index i.</ins>
+- **Update(A, i, x):** <ins>Replace the element at index i with value x.</ins>
+- **Insert(A, i, x):** <ins>Insert value x at index i (may require shifting elements).</ins>
+- **Delete(A, i):** <ins>Delete element at index i (may require shifting elements).</ins>
+- **Traverse(A):** <ins>Visit each element of the array in order.</ins>
+- **Search(A, x):** <ins>Find index of value x (linear or binary depending on sorting).</ins>
+- **Resize(A, m):** <ins>Increase or decrease the size of the array (dynamic array using malloc/realloc in C)</ins>
 
 
 ## Use Case
