@@ -22,10 +22,40 @@ Array[0]=2
 ### Static array
 - Length is **fixed**.
 - The number of elements is **determined** at runtime.
+```text
+//C
+// declaration
+int array[5];
+
+//initialization
+int array[5] = {10, 20, 30, 40, 50};
+
+```
 ### Dynamic array
 - Length **can be changed**.
 - The number of elements can be **allocated** or resized at runtime.
 - **When using malloc or realloc to increase the array size, most to free the allocated memory, after use to avoid memory leaks**.
+```text
+//C
+int *array;
+int n = 10;
+// declaration
+array = (int *) malloc(n * sizeof(int));
+
+//initialization
+for(int i = 0; i < n; i++) {
+    array[i] = i + 1;
+}
+
+//resize 10 to 20
+n = n*2;
+array = (int *)realloc(array, n * sizeof(int));
+for (int i = n/2; i < n; i++) {
+ array[i] = i + 1; 
+}
+
+```
+
 ## Complexity Analysis
 | Operation | Complexity | Notes |
 |---|---|---|
@@ -34,9 +64,9 @@ Array[0]=2
 | Insert | **O(n)** | Requires shifting elements |
 | Delete | **O(n)** | Requires shifting elements |
 | Traverse | **O(n)** | Visit all elements |
-| Search | **O(n)/[O(log n)]** | Linear for unsorted, binary for sorted |
+| Search | **O(n)/O(log n)<sin>(1)</sin>** | Linear for unsorted, binary for sorted |
 
-[If the array is sorted, we can use Binary Search, which runs in O(log n).]
+(1): If the array is sorted, we can use Binary Search, which runs in O(log n).
 ## Sort the Integer
 ### Bubble Sort
 <ins>Bubble Sort is simple and mainly used for teaching, but inefficient for large datasets.</ins>
