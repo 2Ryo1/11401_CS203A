@@ -62,7 +62,7 @@ First-Out: 2
 | **Performance** | <ins>O(1)</ins> push/pop/enqueue/dequeue (except resizing) | <ins>O(1) push/pop/enqueue/dequeue</ins> |
 
 
-# Comparison of Stacks and Queues 
+## Comparison of Stacks and Queues 
 | Feature | Stack | Queue |
 |---|---|---|
 | **Direction of I/O**  | Both operations happen at the **top**  | Input at **rear**, output at **front**|
