@@ -161,7 +161,7 @@ set [2]next→[5] and [5]next→[3]
 ```C
 #include <stdio.h>
 #include <stdlib.h>
-
+//C
 typedef struct Node {
     int data;
     struct Node* next;
