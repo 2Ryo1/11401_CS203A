@@ -101,6 +101,8 @@ i = probe sequence index (0, 1, 2, …),m: table size
 Clustering in hashing refers to the phenomenon where collisions cause elements to concentrate in certain areas of the hash table, rather than being evenly distributed. <ins>This leads to longer probe sequences and degraded performance.</ins>
 - **Primary clustering :**
   Primary clustering occurs in linear probing when **consecutive** filled slots form long contiguous blocks. Once a block starts to grow, new collisions tend to extend it further, making probe chains longer and searches slower.
+
+  
 - **Secondary clustering :**
   Secondary clustering happens when different keys produce the same initial hash value and therefore follow identical probe sequences. <ins>Unlike primary clustering, the filled slots are **not necessarily consecutive**, but the probe paths overlap, causing repeated collisions along the same pattern.</ins>
 ## Try hashing
