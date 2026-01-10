@@ -13,7 +13,9 @@ Priority = Importance or Urgency
 | OS process with small remaining time | High priority (shortest job first) |
 | Network packet with high QoS level | High priority |
 
-
+- **In a max-heap:** the largest key = highest priority
+- **In a min-heap** the smallest key = highest priority
+- 
 ## Heap-Order Ordering
 Heaps are commonly used to implement <ins>priority queues and for heap sort algorithms.</ins>
 ### Max heap
