@@ -27,6 +27,7 @@ which points to where the corresponding value is stored.
 
 ## Load Factor (α)
 measures how full the table is: **α = number of elements / table size**
+- A higher load factor leads to more collisions, which in turn produces longer probe chains
 
 ## Hashing
 A data structure that stores key-value pairs using a hash function to compute an index into an
@@ -96,5 +97,11 @@ i = probe sequence index (0, 1, 2, …),m: table size
 | Insert | O(1) | O(n) | May require several probes |
 | Delete | O(1) | O(n) | Needs careful slot marking (“lazy delete”) |
 
+## Clustering
+Clustering in hashing refers to the phenomenon where collisions cause elements to concentrate in certain areas of the hash table, rather than being evenly distributed. <ins>This leads to longer probe sequences and degraded performance.</ins>
+- **Primary clustering :**
+  Primary clustering occurs in linear probing when consecutive filled slots form long contiguous blocks. Once a block starts to grow, new collisions tend to extend it further, making probe chains longer and searches slower.
+- **Secondary clustering :**
+  Secondary clustering happens when different keys produce the same initial hash value and therefore follow identical probe sequences. Unlike primary clustering, the filled slots are not necessarily consecutive, but the probe paths overlap, causing repeated collisions along the same pattern.
 ## Try hashing
 https://github.com/2Ryo1/11401_CS203A/blob/main/AssignmentIV/README_s1133352.md
