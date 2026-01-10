@@ -52,6 +52,16 @@ A linear data structure that follows the **First-In-First-Out (FIFO)** principle
 First-In: 5
 First-Out: 2
 ```
+## Array vs Linked List Implementation
+| Structure | Array Implementation | Linked List Implementation |
+|---|---|---|
+| **Stack** | top, MAX_SIZE, array storage | top pointer |
+| **Queue** | front, rear, MAX_SIZE, array storage, sometimes count  | front and rear pointers |
+| **Memory Management** | Pre-allocated, may waste unused space; resizing cost | Dynamic allocation per node, pointer overhead |
+| **Overflow/Underflow** | Must check indices; circular logic for queue | Only “overflow” if heap memory is exhausted |
+| **Performance** | <ins>O(1)</ins> push/pop/enqueue/dequeue (except resizing) | <ins>O(1) push/pop/enqueue/dequeue</ins> |
+
+
 # Comparison of Stacks and Queues 
 | Feature | Stack | Queue |
 |---|---|---|
