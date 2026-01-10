@@ -1,9 +1,12 @@
 # Stack
 A linear data structure that follows the **Last-In-First-Out (LIFO)** principle. 
-- LIFO: Elements are added and removed from the same end, called the **top**.
+- **LIFO:** Elements are added and removed from the same end, called the **top**.
 - (Array: top → integer index of the current top element (initially -1))
 - (Linked list: Node* top → pointer to the head node (stack top))
 ## operations
+- **Stack CreateS(maxStackSize):** <ins>create an empty stack whose maximum size is maxStackSize</ins>
+- **Boolean IsFull(stack, maxStackSize):** <ins>if (number of elements in stack == maxStackSize) return TRUE</ins> <ins>else return FALSE</ins>
+- **Boolean IsEmpty(stack):** <ins>if (stack == CreateS(maxStackSize)) return TRUE</ins> <ins>else return FALSE</ins>
 ### push: add element(from end)
 - Array: check top < MAX_SIZE-1, then stack[++top] = value
 - Linked list: create new node, set newNode->next = top
@@ -24,12 +27,15 @@ First-Out: 2
 ```
 # Queue
 A linear data structure that follows the **First-In-First-Out (FIFO)** principle. 
-- FIFO: Elements are added at one end (rear) and removed from the other end (front).
+- **FIFO:** Elements are added at one end (rear) and removed from the other end (front).
 - (Array: rear → index of the last element)
 - (Array: front → index of the first element)
 - (Linked list: Node* rear → pointer to last node)
 - (Linked list: Node* front → pointer to first node)
 ## operations
+- Queue CreateQ(j, list): <ins>create an empty queue whose maximum size is maxQueueSize</ins>
+- Boolean IsFullQ(queue, maxQueueSize): <ins>if (number of elements in queue == maxQueueSize) return TRUE</ins> <ins>else return FALSE</ins>
+- Boolean IsEmptyQ(queue): <ins>if (stack == CreateS(maxQueueSize)) return TRUE</ins> <ins>else return FALSE</ins>
 ### enqueue: add element(from front)
 - Array: rear = (rear + 1) % MAX_SIZE; queue[rear] = value
 - Linked list: create new node, set rear->next = newNode, update rear = newNode
