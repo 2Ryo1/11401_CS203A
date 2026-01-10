@@ -15,7 +15,7 @@ Priority = Importance or Urgency
 
 - **In a max-heap:** the largest key = highest priority
 - **In a min-heap** the smallest key = highest priority
-- 
+
 ## Heap-Order Ordering
 Heaps are commonly used to implement <ins>priority queues and for heap sort algorithms.</ins>
 ### Max heap
