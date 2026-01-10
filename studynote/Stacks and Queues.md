@@ -8,11 +8,11 @@ A linear data structure that follows the **Last-In-First-Out (LIFO)** principle.
 - **Boolean IsFull(stack, maxStackSize):** <ins>if (number of elements in stack == maxStackSize) return TRUE</ins> <ins>else return FALSE</ins>
 - **Boolean IsEmpty(stack):** <ins>if (stack == CreateS(maxStackSize)) return TRUE</ins> <ins>else return FALSE</ins>
 ### push: add element(from end)
-- Array: check top < MAX_SIZE-1, then stack[++top] = value
-- Linked list: create new node, set newNode->next = top
+- **Array:** check top < MAX_SIZE-1, then stack[++top] = value
+- **Linked list:** create new node, set newNode->next = top
 ### pop: remove element(from end)
-- Array: check top >= 0, then value = stack[top--]
-- Linked list: check if top != NULL, set top = top->next
+- **Array:** check top >= 0, then value = stack[top--]
+- **Linked list:** check if top != NULL, set top = top->next
 ## image
 ```text
 Last-In (push)   First-Out(pop)
@@ -37,11 +37,11 @@ A linear data structure that follows the **First-In-First-Out (FIFO)** principle
 - Boolean IsFullQ(queue, maxQueueSize): <ins>if (number of elements in queue == maxQueueSize) return TRUE</ins> <ins>else return FALSE</ins>
 - Boolean IsEmptyQ(queue): <ins>if (stack == CreateS(maxQueueSize)) return TRUE</ins> <ins>else return FALSE</ins>
 ### enqueue: add element(from front)
-- Array: rear = (rear + 1) % MAX_SIZE; queue[rear] = value
-- Linked list: create new node, set rear->next = newNode, update rear = newNode
+- **Array:** rear = (rear + 1) % MAX_SIZE; queue[rear] = value
+- **Linked list:** create new node, set rear->next = newNode, update rear = newNode
 ### dequeue: remove element(from end)
-- Array: front = (front + 1) % MAX_SIZE; value = queue[front]
-- Linked list: check if front != NULL, set front = front->next
+- **Array:** front = (front + 1) % MAX_SIZE; value = queue[front]
+- **Linked list:** check if front != NULL, set front = front->next
 ## image
 ```text
           First-In(enqueue)
