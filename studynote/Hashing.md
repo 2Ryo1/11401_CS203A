@@ -95,3 +95,6 @@ i = probe sequence index (0, 1, 2, …),m: table size
 | Search | O(1) | O(n) | At high load factor, probe chain length ↑ |
 | Insert | O(1) | O(n) | May require several probes |
 | Delete | O(1) | O(n) | Needs careful slot marking (“lazy delete”) |
+
+## Try hashing
+https://github.com/2Ryo1/11401_CS203A/blob/main/AssignmentIV/README_s1133352.md
