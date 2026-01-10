@@ -45,6 +45,13 @@ Directed graph (digraph)
 | **Family tree** | Every node reachable | Road network |
 | **Disconnected Graph** | Some nodes isolated | Islands without bridge |
 
+## Operations
+- **Graph Create():** return an empty graph
+- **Graph InsertVertex(graph, v):** return a graph with v inserted. v has no incident edge
+- **Graph InsertEdge(graph, v1, v2):** return a graph with new edge between v1 and v2
+- **Graph DeleteVertex(graph, v):** return a graph in which v and all edges incident to it are removed
+- **Graph DeleteEdge(graph, v1, v2):** return a graph in which the edge (v1, v2) is removed
+- **List Adjacent(graph, v):** return a list of all vertices that are adjacent to v
 
 ## <ins>Adjacency Matrix</ins>
 A **V × V** matrix that records whether an edge exists between two vertices.
@@ -115,6 +122,35 @@ Directed graph (digraph)
 | **Neighbor iteration** | O(V) | O(deg(v)) |
 | **Implementation** | Simple | Moderate |
 | **Dynamic graph** | Hard | Easy |
+
+## Graph:DFS Algorithm
+- **Step1.**
+  Create an empty **stack** and an empty visited set
+- **Step2.**
+  Push the starting vertex to the stack
+- **Step3.** 
+**While the stack is not empty:** {<br>
+ Pop a vertex v from the stack<br>
+  If v is not visited:{<br>
+　　　Mark v as visited and print v<br>
+　　　Push all unvisited neighbors of v to the stack}<br>
+}
+
+## Graph:BFS Algorithm
+- **Step1.**
+  Create an empty **queue** and an empty visited set
+- **Step2.**
+  Enqueue the starting vertex
+- **Step3.** 
+**While the queue is not empty:** {<br>
+ Dequeue a vertex v<br>
+ If v is not visited:{<br>
+　　Mark v as visited and print v<br>
+　　Enqueue all unvisited neighbors of v}<br>
+}
+
+This is identical to tree level-order traversal, except:
+Graphs may have cycles → must check visited
 
 ## Graph vs Tree
 -  Graph: general structure, can have cycles, any shape
