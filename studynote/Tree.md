@@ -69,8 +69,11 @@ Example:When delete 18 of  Tree, replase the node with 11 or 23 from ordering pr
 -  Specialization of BST
 -  Extra invariant: height kept close to log n
 -  Guarantees predictable performance
--  **AVL**: BST + Height-balanced
--  **Red-Black Tree**: BST + Color-balanced
+-  **AVL**: <ins>BST + Height-balanced</ins><br>
+AVL tree is a binary search tree in which for every node in the tree, the height of the left and right subtrees differ by at most 1.
+-  **Red-Black Tree**: <ins>BST + Color-balanced</ins><br>
+Red-Black Tree is a binary search tree where each node is colored red or black, and balance rules ensure that no path from root to leaf is more than twice as long as any other, keeping operations efficient.
+
 - Input integers: 52, 18, 82, 7, 69, 36, 95, 3, 11, 23, 27, 41, 60, 64, 78, 31, 45, 56, 73, 89(Visualization: (https://www.cs.usfca.edu/~galles/visualization/AVLtree.html)
 <img width="808" height="380" alt="image" src="https://github.com/user-attachments/assets/55d76cd5-da40-4e5b-a0d1-ed2cf15e0cfb" />
 
