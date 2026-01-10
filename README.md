@@ -7,10 +7,10 @@ Course repository for Data Structures
 This repository is for recording the lecture content of the information structure.
 
 ## Study Note
-           Array:
-     Linked list:
- Stack and Queue:
-         Hashing:
-            Tree:
-            Heap:
-           Graph: 
+- Array:
+- Linked list:
+- Stack and Queue:
+- Hashing:
+- Tree:
+- Heap:
+- Graph: 
